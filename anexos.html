@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Diccionarios de variables &#8212; Convocatoria 38.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'anexos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Georeferenciación manzanas" href="manzanas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Convocatoria 38. - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Convocatoria 38. - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Convocatoria 38
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Diccionarios de variables</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CIDEACC/prueba_datos_convocatoria38" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CIDEACC/prueba_datos_convocatoria38/issues/new?title=Issue%20on%20page%20%2Fanexos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/anexos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diccionarios de variables</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida"><strong>Encuesta Nacional de Calidad de Vida</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unidad-para-las-victimas"><strong>Unidad para las víctimas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#censo-nacional-de-poblacion-y-vivienda"><strong>Censo Nacional de población y vivienda</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-de-cultura-politica"><strong>Encuesta de cultura política</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pib"><strong>PIB</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="diccionarios-de-variables">
+<h1><strong>Diccionarios de variables</strong><a class="headerlink" href="#diccionarios-de-variables" title="Link to this heading">#</a></h1>
+<p>PONER DESCRIPCION DE LA ENCUESTA
+PONER QUE LAS VARIABLES FUERON SELECCIONADAS POR TAL Y TAL
+PONER CITA DE LA FUENTE</p>
+<section id="encuesta-nacional-de-calidad-de-vida">
+<h2><strong>Encuesta Nacional de Calidad de Vida</strong><a class="headerlink" href="#encuesta-nacional-de-calidad-de-vida" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Categorías / Tipo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ID</span></code></p></td>
+<td><p>Identificador único de la vivienda donde se realizó la encuesta</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FEX_C</span></code></p></td>
+<td><p>Factor de expansión muestral</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_DPTO</span></code></p></td>
+<td><p>Código del departamento según DANE</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">COD_MUNI</span></code></p></td>
+<td><p>Código del municipio según DANE</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">REGION</span></code></p></td>
+<td><p>Región geográfica del país</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">CARIBE</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ANDINA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">PACIFICA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ORINOQUIA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">AMAZONIA</span></code> <br> <strong>En este caso solo se tendrá en cuenta la región Caribe</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code></p></td>
+<td><p>Nombre del municipio</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code></p></td>
+<td><p>Nombre del departamento</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RUIDOS</span></code></p></td>
+<td><p>¿Con qué frecuencia se presentan ruidos externos?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MALOS_OLORES</span></code></p></td>
+<td><p>¿Con qué frecuencia se presentan malos olores externos?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PRESENCIA_BASURAS</span></code></p></td>
+<td><p>¿Con qué frecuencia se observan basuras en el entorno?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CONTAMINACION_AIRE</span></code></p></td>
+<td><p>¿Con qué frecuencia se percibe contaminación del aire?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CONTAMINACION_AGUA</span></code></p></td>
+<td><p>¿Contaminación en cuerpos de agua cercanos?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INVASION_ESPACIO_PUBLICO</span></code></p></td>
+<td><p>¿Se ha presentado ocupación indebida del espacio público?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MOLESTIAS_ANIMALES</span></code></p></td>
+<td><p>¿Presencia de animales que generan molestias?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PRESENCIA_INSECTOS</span></code></p></td>
+<td><p>¿Presencia de insectos o plagas?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NUNCA</span></code><br> - <code class="docutils literal notranslate"><span class="pre">ALGUNAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">MUCHAS</span> <span class="pre">VECES</span></code><br> - <code class="docutils literal notranslate"><span class="pre">SIEMPRE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">INUNDACIONES_DESBORDAMIENTO_CRECIENTES_ARROYOS</span></code></p></td>
+<td><p>¿La vivienda ha sido afectada por inundaciones?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AVALANCHAS_DERRUMBES_DESLIZAMIENTOS</span></code></p></td>
+<td><p>¿Ha sido afectada por derrumbes o deslizamientos?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HUNDIMIENTO_DE_TERRENO</span></code></p></td>
+<td><p>¿Hundimiento o agrietamiento del terreno?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">VENTARRONES_TORMENTAS_VENDAVALES</span></code></p></td>
+<td><p>¿Fenómenos climáticos fuertes como vendavales?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SISMO_TEMBLOR</span></code></p></td>
+<td><p>¿Ha sido afectada por sismos o temblores?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INGRESO_MENSUAL_TOTAL</span></code></p></td>
+<td><p>Ingreso mensual total del hogar</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PAGO_SEG_SOCIAL</span></code></p></td>
+<td><p>Valor del pago mensual en salud</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">UBICACION_ENTIDAD_SALUD</span></code></p></td>
+<td><p>Ubicación de la entidad de salud</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">MISMO</span> <span class="pre">MUNICIPIO</span></code><br> - <code class="docutils literal notranslate"><span class="pre">DIFERENTE</span> <span class="pre">MUNICIPIO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RESPONSABLE_PAGO_AFILIACION</span></code></p></td>
+<td><p>Quién paga la afiliación mensual a salud</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">Parte</span> <span class="pre">propia</span> <span class="pre">y</span> <span class="pre">parte</span> <span class="pre">empresa</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Descuento</span> <span class="pre">por</span> <span class="pre">pensión</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Pago</span> <span class="pre">total</span> <span class="pre">propio</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Pago</span> <span class="pre">total</span> <span class="pre">empresa</span></code><br> - <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">paga</span> <span class="pre">(beneficiario)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SEG_SOCIAL</span></code></p></td>
+<td><p>Tipo de afiliación al sistema de salud</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">Contributivo</span> <span class="pre">(EPS)</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Especial</span> <span class="pre">(Fuerzas</span> <span class="pre">armadas,</span> <span class="pre">Ecopetrol,</span> <span class="pre">universidades</span> <span class="pre">públicas,</span> <span class="pre">magisterio)</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Subsidiado</span> <span class="pre">(EPS-S)</span></code><br> - <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe,</span> <span class="pre">no</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MEDICINA_PREPAGADA</span></code></p></td>
+<td><p>¿Tiene medicina prepagada?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PLAN_COMPLEMENTARIO_EPS</span></code></p></td>
+<td><p>¿Tiene plan complementario de EPS?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POLIZA_HOSPITALIZACION_CIRUGIA</span></code></p></td>
+<td><p>¿Cuenta con póliza para hospitalización o cirugía?</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">SI</span></code><br> - <code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FRECUENCIA_INTERNET</span></code></p></td>
+<td><p>Frecuencia de acceso a internet</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">Todos</span> <span class="pre">los</span> <span class="pre">días</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Semanalmente</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Mensualmente</span></code><br> - <code class="docutils literal notranslate"><span class="pre">Anualmente</span></code><br> - <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">usa</span> <span class="pre">internet</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PERCEPCION_CALIDAD_DE_VIDA</span></code></p></td>
+<td><p>Percepción sobre la calidad de vida</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10:</span> <span class="pre">Mejor</span> <span class="pre">vida</span> <span class="pre">-</span> <span class="pre">0:</span> <span class="pre">Peor</span> <span class="pre">vida</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>El factor de expansión es un valor utilizado en estadísticas para ajustar una muestra de forma que represente adecuadamente a una población más grande, compensando las diferencias en la selección de la muestra.
+<em>Ejemplo: Si un factor de expansión es 3, significa que cada observación en la muestra debe ser multiplicada por 3 para estimar el valor correspondiente en la población completa.</em></p>
+</div>
+</section>
+<section id="unidad-para-las-victimas">
+<h2><strong>Unidad para las víctimas</strong><a class="headerlink" href="#unidad-para-las-victimas" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Categorías / Tipo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code></p></td>
+<td><p>Nombre del departamento.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code></p></td>
+<td><p>Nombre del municipio.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ESTIMADO</span></code></p></td>
+<td><p>Valor numérico estimado del riesgo de victimización.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CLUSTER</span></code></p></td>
+<td><p>Agrupación del municipio según el nivel de riesgo.</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">BAJO</span></code><br>- <code class="docutils literal notranslate"><span class="pre">MEDIO</span> <span class="pre">BAJO</span></code><br>- <code class="docutils literal notranslate"><span class="pre">MEDIO</span></code><br>- <code class="docutils literal notranslate"><span class="pre">MEDIO</span> <span class="pre">ALTO</span></code><br>- <code class="docutils literal notranslate"><span class="pre">ALTO</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="censo-nacional-de-poblacion-y-vivienda">
+<h2><strong>Censo Nacional de población y vivienda</strong><a class="headerlink" href="#censo-nacional-de-poblacion-y-vivienda" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Significado</strong></p></th>
+<th class="head"><p><strong>Categorías</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code></p></td>
+<td><p>Departamento donde se realizó la encuesta</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code></p></td>
+<td><p>Municipio donde se realizó la encuesta</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_DPTO</span></code></p></td>
+<td><p>Código del departamento</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Código</span> <span class="pre">(int)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">COD_MPIO</span></code></p></td>
+<td><p>Código del municipio</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Código</span> <span class="pre">(int)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_MANZANA</span></code></p></td>
+<td><p>Código de la manzana a la que pertenece</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Código</span> <span class="pre">(int)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TERR_ETNICA</span></code></p></td>
+<td><p>Vivienda en una territorialidad étnica</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TIPO_TERR_ETNICA</span></code></p></td>
+<td><p>Tipo de territorialidad étnica</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Resguardo</span> <span class="pre">Indígena</span></code><br><code class="docutils literal notranslate"><span class="pre">Territorio</span> <span class="pre">Colectivo</span> <span class="pre">de</span> <span class="pre">Comunidad</span> <span class="pre">Negra</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ESTRATO</span></code></p></td>
+<td><p>Estrato de la vivienda (según servicio de energía)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sin</span> <span class="pre">Estrato</span></code>, <code class="docutils literal notranslate"><span class="pre">Estrato</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">Estrato</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">Estrato</span> <span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">Estrato</span> <span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">Estrato</span> <span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">Estrato</span> <span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ENERGIA</span></code></p></td>
+<td><p>¿Cuenta la persona encuestada con servicio de energía eléctrica?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACUEDUCTO</span></code></p></td>
+<td><p>¿Cuenta la persona encuestada con servicio de acueducto?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GAS</span></code></p></td>
+<td><p>¿Cuenta la persona encuestada con servicio de gas?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code> <br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AGUA_COCINA</span></code></p></td>
+<td><p>Fuente de agua para preparar los alimentos</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LUGAR_COCINA</span></code></p></td>
+<td><p>Lugar donde preparan los alimentos</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Solo</span> <span class="pre">cocina</span></code><br><code class="docutils literal notranslate"><span class="pre">Dormitorio</span></code><br><code class="docutils literal notranslate"><span class="pre">Sala</span> <span class="pre">/</span> <span class="pre">Comedor</span> <span class="pre">con</span> <span class="pre">lavaplatos</span></code><br><code class="docutils literal notranslate"><span class="pre">Sala</span> <span class="pre">/</span> <span class="pre">Comedor</span> <span class="pre">sin</span> <span class="pre">lavaplatos</span></code><br><code class="docutils literal notranslate"><span class="pre">Patio</span> <span class="pre">o</span> <span class="pre">aire</span> <span class="pre">libre</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">cocinan</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RECONOCIMIENTO_ETNICO</span></code></p></td>
+<td><p>Reconocimiento étnico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Indígena</span></code><br><code class="docutils literal notranslate"><span class="pre">Gitano(a)</span> <span class="pre">o</span> <span class="pre">Rrom</span></code><br><code class="docutils literal notranslate"><span class="pre">Raizal</span></code><br><code class="docutils literal notranslate"> <span class="pre">Palenquero(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Negro(a),</span> <span class="pre">Mulato(a),</span> <span class="pre">Afrodescendiente,</span> <span class="pre">Afrocolombiano(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Ningún</span> <span class="pre">grupo</span> <span class="pre">étnico</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_ETNIA</span></code></p></td>
+<td><p>Pueblo indígena de pertenencia</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HABLA_LENGUA_NATIVA</span></code></p></td>
+<td><p>¿Habla la lengua nativa de su pueblo?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ENTIENDE_LENGUA_NATIVA</span></code></p></td>
+<td><p>Entiende la lengua nativa de su pueblo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALFABETA</span></code></p></td>
+<td><p>¿Sabe leer y escribir?</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ASISTENCIA_ESCOLAR</span></code></p></td>
+<td><p>Asistencia escolar (de forma presencial o virtual)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NIVEL_EDUCATIVO</span></code></p></td>
+<td><p>Nivel educativo más alto alcanzado</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Preescolar</span></code>, <code class="docutils literal notranslate"><span class="pre">Básica</span> <span class="pre">primaria</span></code>, <code class="docutils literal notranslate"><span class="pre">Básica</span> <span class="pre">secundaria</span></code>, <code class="docutils literal notranslate"><span class="pre">Media</span> <span class="pre">académica</span> <span class="pre">o</span> <span class="pre">clásica</span></code>, <code class="docutils literal notranslate"><span class="pre">Media</span> <span class="pre">técnica</span></code>, <code class="docutils literal notranslate"><span class="pre">Normalista</span></code>, <code class="docutils literal notranslate"><span class="pre">Técnica</span> <span class="pre">profesional</span> <span class="pre">o</span> <span class="pre">Tecnológica</span></code>, <code class="docutils literal notranslate"><span class="pre">Universitario</span></code>, <code class="docutils literal notranslate"><span class="pre">Especialización,</span> <span class="pre">maestría,</span> <span class="pre">doctorado</span></code>, <code class="docutils literal notranslate"><span class="pre">Ninguno</span></code>, <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Aplica</span></code>, <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CALIDAD_SERVICIO_SALUD</span></code></p></td>
+<td><p>Calidad de la prestación del servicio de salud (cuando fue atendido, no todos han sido atendidos)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Muy</span> <span class="pre">bueno</span></code>, <code class="docutils literal notranslate"><span class="pre">Bueno</span></code>, <code class="docutils literal notranslate"><span class="pre">Malo</span></code>, <code class="docutils literal notranslate"><span class="pre">Muy</span> <span class="pre">Malo</span></code>, <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Aplica</span></code>, <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Informa</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="encuesta-de-cultura-politica">
+<h2><strong>Encuesta de cultura política</strong><a class="headerlink" href="#encuesta-de-cultura-politica" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Categorías</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ID</span></code></p></td>
+<td><p>Identificación única de la encuesta realizada.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">REGION</span></code></p></td>
+<td><p>Región donde está ubicado la persona encuestada.   <br> <strong>En este caso solo se tendrá en cuenta la región Caribe</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Bogotá</span></code>, <code class="docutils literal notranslate"><span class="pre">Caribe</span></code>, <code class="docutils literal notranslate"><span class="pre">Oriental</span></code>,<code class="docutils literal notranslate"><span class="pre">Central</span></code>,<code class="docutils literal notranslate"><span class="pre">Pacífica</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FEX_P</span></code></p></td>
+<td><p>Factor de expansión muestral.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PERCEPCION_DEMOCRACIA</span></code></p></td>
+<td><p>Percepción general sobre la democracia en Colombia.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Democrático</span></code><br><code class="docutils literal notranslate"><span class="pre">Medianamente</span> <span class="pre">democrático</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">democrático</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SATISFACCION_DEMOCRACIA</span></code></p></td>
+<td><p>Grado de satisfacción con el funcionamiento de la democracia en Colombia.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Muy</span> <span class="pre">insatisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Insatisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Ni</span> <span class="pre">satisfecho(a)</span> <span class="pre">ni</span> <span class="pre">insatisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Satisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Muy</span> <span class="pre">satisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/no</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RESPETO_ELEGIR_SER_ELEGIDO</span></code></p></td>
+<td><p>Considera que en Colombia se respeta el derecho a elegir y ser elegido.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GARANTIA_PARTICIPACION</span></code></p></td>
+<td><p>Considera que en Colombia se garantiza el derecho a participar.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LIBERTAD_EXPRESION</span></code></p></td>
+<td><p>Considera que en Colombia existe libertad para expresar y difundir el pensamiento.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LIBERTAD_PERTENENCIA_POLITICA</span></code></p></td>
+<td><p>Considera que en Colombia existe libertad para pertenecer a partidos y movimientos políticos.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GARANTIA_MANIFESTACION</span></code></p></td>
+<td><p>Considera que en Colombia existen garantías para manifestarse públicamente.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IGUALDAD_ANTE_LA_LEY</span></code></p></td>
+<td><p>Considera que en Colombia se garantiza el derecho a la igualdad ante la ley.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACCESO_INFO_PUBLICA</span></code></p></td>
+<td><p>Considera que en Colombia se facilita el acceso de los ciudadanos a la información pública.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CONTROL_SOCIAL_GESTION</span></code></p></td>
+<td><p>Considera que en Colombia se permite a los ciudadanos ejercer control social sobre la gestión del Estado.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_VIDA_LIBERTAD</span></code></p></td>
+<td><p>Considera que en Colombia se protegen los derechos a la vida, libertad, integridad y seguridad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_SOCIALES</span></code></p></td>
+<td><p>Considera que en Colombia se protegen los derechos a educación, salud, seguridad social, trabajo y vivienda.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_LIBERTAD_INFORMACION</span></code></p></td>
+<td><p>Considera que en Colombia se protegen los derechos a la libertad de expresión, conciencia y divulgación de información.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_RECREACION_CULTURA</span></code></p></td>
+<td><p>Considera que en Colombia se protegen los derechos a la recreación y la cultura.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_MINORIAS</span></code></p></td>
+<td><p>Considera que en Colombia se protegen los derechos de las minorías étnicas y sociales.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_CAMPESINOS</span></code></p></td>
+<td><p>Considera que en Colombia se protegen los derechos del campesinado.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_MUJERES</span></code></p></td>
+<td><p>Considera que en Colombia se protegen los derechos de las mujeres.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RIESGOS_COMUNIDAD</span></code></p></td>
+<td><p>Percepción sobre si en el último año surgieron riesgos en la comunidad del encuestado contra la vida, libertad e integridad (por ejemplo, estigmatización o discriminación).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CONFIANZA_ALCALDIA</span></code></p></td>
+<td><p>Nivel de confianza del encuestado en la Alcaldía Municipal o Distrital.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Ni</span> <span class="pre">mucho</span> <span class="pre">ni</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">mucho</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CONFIANZA_FUERZAS_MILITARES</span></code></p></td>
+<td><p>Nivel de confianza del encuestado en las Fuerzas Militares (Ejército, Armada y Fuerza Aérea).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Ni</span> <span class="pre">mucho</span> <span class="pre">ni</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">mucho</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pib">
+<h2><strong>PIB</strong><a class="headerlink" href="#pib" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Categorías / Tipo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_DEPTO</span></code></p></td>
+<td><p>Código del departamento.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code></p></td>
+<td><p>Nombre del departamento.<br> <strong>En este caso solo se tendrán en cuenta los departamentos de la región Caribe</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PIB</span></code></p></td>
+<td><p>Producto interno bruto departamental a precios corrientes y en miles de millones de pesos.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PARTICIPACION_PORCENTUAL</span></code></p></td>
+<td><p>Participación porcentual de cada departamento en el PIB global de Colombia</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AÑO</span></code></p></td>
+<td><p>Año en el que fue evaluada la medida PIB</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2023</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="manzanas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Georeferenciación manzanas</strong></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida"><strong>Encuesta Nacional de Calidad de Vida</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unidad-para-las-victimas"><strong>Unidad para las víctimas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#censo-nacional-de-poblacion-y-vivienda"><strong>Censo Nacional de población y vivienda</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-de-cultura-politica"><strong>Encuesta de cultura política</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pib"><strong>PIB</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kanery Camargo - Nicoll Fontalvo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
