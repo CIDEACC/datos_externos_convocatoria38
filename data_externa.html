@@ -183,6 +183,12 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="anexos.html"><strong>Diccionarios de variables</strong></a></li>
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -3148,7 +3154,7 @@ Name: count, dtype: int64
 <p>Inicialmente procedemos a cargar los conjuntos de datos por cada departamento.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ruta_base</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\CCOSTA397\Desktop\CIDEACC\datos-externos-convocatoria38\data_dane&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ruta_base</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\CCOSTA397\OneDrive\Desktop\CIDEACC\convocatoria38\raw_data\data_dane&quot;</span>
 
 <span class="n">df_cargados</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -3182,7 +3188,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta encontrada: C:\Users\CCOSTA397\Desktop\CIDEACC\datos-externos-convocatoria38\data_dane
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta encontrada: C:\Users\CCOSTA397\OneDrive\Desktop\CIDEACC\convocatoria38\raw_data\data_dane
 📂 Carpetas encontradas: [&#39;atlantico&#39;, &#39;bolivar&#39;, &#39;cesar&#39;, &#39;cordoba&#39;, &#39;guajira&#39;, &#39;magdalena&#39;, &#39;sanandres&#39;, &#39;sucre&#39;]
 
 📁 Procesando carpeta: atlantico
@@ -3235,6 +3241,240 @@ Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_atlantico_geo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>U_DPTO</th>
+      <th>U_MPIO</th>
+      <th>UA_CLASE</th>
+      <th>UA1_LOCALIDAD</th>
+      <th>U_SECT_RUR</th>
+      <th>U_SECC_RUR</th>
+      <th>UA2_CPOB</th>
+      <th>U_SECT_URB</th>
+      <th>U_SECC_URB</th>
+      <th>U_MZA</th>
+      <th>U_EDIFICA</th>
+      <th>COD_ENCUESTAS</th>
+      <th>U_VIVIENDA</th>
+      <th>COD_DANE_ANM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5753893</td>
+      <td>1</td>
+      <td>0800110000000000010101</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>5753502</td>
+      <td>1</td>
+      <td>0800110000000000010101</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>5754267</td>
+      <td>1</td>
+      <td>0800110000000000010101</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>5753630</td>
+      <td>1</td>
+      <td>0800110000000000010101</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>5754193</td>
+      <td>1</td>
+      <td>0800110000000000010101</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>681904</th>
+      <td>8</td>
+      <td>849</td>
+      <td>3</td>
+      <td>99</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>629227</td>
+      <td>1</td>
+      <td>0884930010500000000000</td>
+    </tr>
+    <tr>
+      <th>681905</th>
+      <td>8</td>
+      <td>849</td>
+      <td>3</td>
+      <td>99</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>786078</td>
+      <td>1</td>
+      <td>0884930010500000000000</td>
+    </tr>
+    <tr>
+      <th>681906</th>
+      <td>8</td>
+      <td>849</td>
+      <td>3</td>
+      <td>99</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>821782</td>
+      <td>1</td>
+      <td>0884930010500000000000</td>
+    </tr>
+    <tr>
+      <th>681907</th>
+      <td>8</td>
+      <td>849</td>
+      <td>3</td>
+      <td>99</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1030035</td>
+      <td>1</td>
+      <td>0884930010500000000000</td>
+    </tr>
+    <tr>
+      <th>681908</th>
+      <td>8</td>
+      <td>849</td>
+      <td>3</td>
+      <td>99</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1030036</td>
+      <td>1</td>
+      <td>0884930010500000000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>681909 rows × 14 columns</p>
+</div></div></div>
 </div>
 <section id="metodos-para-aplicar-a-cada-departamento">
 <h3><strong>Métodos para aplicar a cada departamento</strong><a class="headerlink" href="#metodos-para-aplicar-a-cada-departamento" title="Link to this heading">#</a></h3>
@@ -3309,7 +3549,7 @@ Name: count, dtype: int64
 <span class="p">}</span>
 
 <span class="c1"># Lista con el orden deseado de las columnas</span>
-<span class="n">orden_columnas</span> <span class="o">=</span> <span class="p">[</span> 
+<span class="n">orden_columnas</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;COD_ENCUESTAS&#39;</span><span class="p">,</span>
     <span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">,</span>
     <span class="s1">&#39;COD_DPTO&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_MPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_MANZANA&#39;</span><span class="p">,</span>
     <span class="s1">&#39;TERR_ETNICA&#39;</span><span class="p">,</span> <span class="s1">&#39;TIPO_TERR_ETNICA&#39;</span><span class="p">,</span> <span class="s1">&#39;ESTRATO&#39;</span><span class="p">,</span>
@@ -3354,6 +3594,7 @@ Name: count, dtype: int64
 </section>
 <section id="departamento-atlantico">
 <h3><strong>Departamento: Atlántico</strong><a class="headerlink" href="#departamento-atlantico" title="Link to this heading">#</a></h3>
+<p>NOTA : REVISAR SI LOS 83730 DE CIERTAS VARIABLES COINCIDEN PARA TODAS LAS MISMAS VARIABLES, ESTO PUEDE DEBERSE A QUE EN ESA VIVIENDA NO SE REALIZARON ESTAS ENCUESTAS, OJO: REVISAR BIEN</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_vivienda_dane</span> <span class="o">=</span> <span class="n">df_atlantico_viviendas</span>
@@ -3410,6 +3651,7 @@ Georeferenciación: (681909, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -3419,7 +3661,6 @@ Georeferenciación: (681909, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -3436,12 +3677,12 @@ Georeferenciación: (681909, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>383</td>
       <td>BARRANQUILLA</td>
       <td>ATLÁNTICO</td>
       <td>08</td>
       <td>001</td>
       <td>0800110000000011070301</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3460,12 +3701,12 @@ Georeferenciación: (681909, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>389</td>
       <td>BARRANQUILLA</td>
       <td>ATLÁNTICO</td>
       <td>08</td>
       <td>001</td>
       <td>0800110000000011070301</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3484,6 +3725,7 @@ Georeferenciación: (681909, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>390</td>
       <td>BARRANQUILLA</td>
       <td>ATLÁNTICO</td>
       <td>08</td>
@@ -3492,7 +3734,6 @@ Georeferenciación: (681909, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>4.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -3508,6 +3749,7 @@ Georeferenciación: (681909, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>400</td>
       <td>BARRANQUILLA</td>
       <td>ATLÁNTICO</td>
       <td>08</td>
@@ -3516,7 +3758,6 @@ Georeferenciación: (681909, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>4.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -3532,6 +3773,7 @@ Georeferenciación: (681909, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>401</td>
       <td>BARRANQUILLA</td>
       <td>ATLÁNTICO</td>
       <td>08</td>
@@ -3540,7 +3782,6 @@ Georeferenciación: (681909, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>4.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -3556,7 +3797,7 @@ Georeferenciación: (681909, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
