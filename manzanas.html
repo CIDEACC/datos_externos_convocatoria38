@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'manzanas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Diccionarios de variables" href="anexos.html" />
+    <link rel="next" title="Diccionarios de variables" href="diccionarios.html" />
     <link rel="prev" title="Datos de interés - Fuentes externas" href="data_externa.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,15 +180,19 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reglas.html"><strong>Reglas de Trabajo</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="raw_to_processed.html"><strong>Raw to Processed</strong></a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Georeferenciación manzanas</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="anexos.html"><strong>Diccionarios de variables</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios de variables</strong></a></li>
 
 
 
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
     </div>
@@ -413,6 +417,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="georeferenciacion-manzanas">
 <h1><strong>Georeferenciación manzanas</strong><a class="headerlink" href="#georeferenciacion-manzanas" title="Link to this heading">#</a></h1>
+<p>AGREGAR NOMBRES DE MUNICIPIOS Y DPTOS A NOTEBOOK DE MANZANAS</p>
 <section id="librerias-y-modulos-necesarios">
 <h2><strong>Librerías y modulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -423,12 +428,12 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">funciones.boxplot_manzanas</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">funciones.countplot_manzanas</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones.boxplot_manzanas</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">folium</span><span class="w"> </span><span class="kn">import</span> <span class="n">GeoJson</span><span class="p">,</span> <span class="n">GeoJsonTooltip</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones.countplot_manzanas</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;pastel&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -944,7 +949,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="anexos.html"
+       href="diccionarios.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

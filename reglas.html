@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Convocatoria 38 &#8212; Convocatoria 38.</title>
+    <title>Reglas de Trabajo &#8212; Convocatoria 38.</title>
   
   
   
@@ -57,10 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reglas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reglas de Trabajo" href="reglas.html" />
+    <link rel="next" title="Raw to Processed" href="raw_to_processed.html" />
+    <link rel="prev" title="Convocatoria 38" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -143,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -174,14 +173,14 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Convocatoria 38
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="reglas.html"><strong>Reglas de Trabajo</strong></a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Reglas de Trabajo</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="raw_to_processed.html"><strong>Raw to Processed</strong></a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
@@ -265,7 +264,7 @@
       
       
       
-      <li><a href="https://github.com/CIDEACC/prueba_datos_convocatoria38/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CIDEACC/prueba_datos_convocatoria38/issues/new?title=Issue%20on%20page%20%2Freglas.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +294,7 @@
       
       
       
-      <li><a href="_sources/intro.ipynb" target="_blank"
+      <li><a href="_sources/reglas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +365,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -377,11 +378,29 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Convocatoria 38</h1>
+    <h1>Reglas de Trabajo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paleta-de-colores"><strong>1. Paleta de Colores</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convenciones-de-nombres"><strong>2. Convenciones de Nombres</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>2.1 Variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorias-de-variables"><strong>2.2 Categorías de Variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>2.3 Departamentos y Municipios</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-notebook"><strong>3. Estructura del Notebook</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-los-datos"><strong>4. Acceso a los datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias"><strong>5. Referencias</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recuerda"><strong>Recuerda:</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,16 +410,146 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="convocatoria-38">
-<h1><strong>Convocatoria 38</strong><a class="headerlink" href="#convocatoria-38" title="Link to this heading">#</a></h1>
-<p align="justify">
-El presente proyecto propone el desarrollo de una solución basada en inteligencia artificial para apoyar la detección temprana y la prevención de la enfermedad renal crónica (ERC) en Colombia, con un enfoque dirigido a mejorar la eficiencia en la toma de decisiones en salud pública. La falta de tamizajes sistemáticos para detectar personas en riesgo de ERC ha llevado a un subdiagnóstico crítico, lo que incrementa los costos del sistema de salud y reduce las posibilidades de tratamiento oportuno. A través del diseño de un modelo predictivo robusto, acompañado de un tablero interactivo con mapas geoespaciales y listados priorizados por riesgo, esta herramienta permitirá identificar áreas y poblaciones de alto riesgo, facilitando intervenciones focalizadas. El proyecto responde a la necesidad urgente de optimizar la asignación de recursos en salud, reducir el avance silencioso de la enfermedad y generar evidencia para una política pública basada en datos.
-</p>
-<div style="text-align: center;">
-    <img src="https://github.com/CIDEACC/datos_externos_convocatoria38/blob/main/imagen_introduccion.png?raw=true" alt= " " width="600"/>
+  <section class="tex2jax_ignore mathjax_ignore" id="reglas-de-trabajo">
+<h1><strong>Reglas de Trabajo</strong><a class="headerlink" href="#reglas-de-trabajo" title="Link to this heading">#</a></h1>
+<p>Este documento agrupa las convenciones y estándares que debemos respetar al construir y procesar nuestro conjunto de datos.</p>
+<section id="paleta-de-colores">
+<h2><strong>1. Paleta de Colores</strong><a class="headerlink" href="#paleta-de-colores" title="Link to this heading">#</a></h2>
+<p>Usaremos la siguiente escala para resaltar secciones, gráficos y tablas. Cada color está definido por su código hexadecimal y su nombre:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Muestra</p></th>
+<th class="head text-left"><p>Nombre</p></th>
+<th class="head text-left"><p>Hex</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#4F000B;"></span></p></td>
+<td class="text-left"><p>Chocolate cosmos</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#4F000B</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#720026;"></span></p></td>
+<td class="text-left"><p>Claret</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#720026</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#A0213F;"></span></p></td>
+<td class="text-left"><p>Amaranth purple</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#A0213F</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#CE4257;"></span></p></td>
+<td class="text-left"><p>Amaranth</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#CE4257</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#E76154;"></span></p></td>
+<td class="text-left"><p>Bittersweet</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#E76154</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#F37053;"></span></p></td>
+<td class="text-left"><p>Burnt sienna</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#F37053</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#FF7F51;"></span></p></td>
+<td class="text-left"><p>Coral</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#FF7F51</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#FF8D53;"></span></p></td>
+<td class="text-left"><p>Atomic tangerine</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#FF8D53</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#FF9B54;"></span></p></td>
+<td class="text-left"><p>Sandy brown</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#FF9B54</span></code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="toctree-wrapper compound">
-</div>
+</section>
+<section id="convenciones-de-nombres">
+<h2><strong>2. Convenciones de Nombres</strong><a class="headerlink" href="#convenciones-de-nombres" title="Link to this heading">#</a></h2>
+<section id="variables">
+<h3><strong>2.1 Variables</strong><a class="headerlink" href="#variables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Formato:</strong></p>
+<ul>
+<li><p>Todas las variables en <strong>MAYÚSCULAS</strong>.</p></li>
+<li><p>Si el nombre está compuesto, separar con guión bajo <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Ejemplos:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NUM_MUNICIPIOS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FECHA_ACTUALIZACION</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Tipo de datos:</strong></p>
+<ul>
+<li><p>Los <strong>códigos</strong> de departamento (<code class="docutils literal notranslate"><span class="pre">COD_DPTO</span></code>), municipio (<code class="docutils literal notranslate"><span class="pre">COD_MPIO</span></code>) y manzana (<code class="docutils literal notranslate"><span class="pre">COD_MANZANA</span></code>) deben manejarse siempre como <strong>STRING</strong>, preservando ceros a la izquierda (p.ej. <code class="docutils literal notranslate"><span class="pre">&quot;08006&quot;</span></code>).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="categorias-de-variables">
+<h3><strong>2.2 Categorías de Variables</strong><a class="headerlink" href="#categorias-de-variables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Codificación:</strong></p>
+<ul>
+<li><p>Las variables CATEGÓRICAS se codifican numéricamente para facilitar el procesamiento.</p></li>
+<li><p>Cada código numérico se mapea a un valor textual en el <strong>Diccionario de Variables</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Acceso:</strong></p>
+<ul>
+<li><p>Para interpretar cualquier categoría, consultar el <code class="docutils literal notranslate"><span class="pre">diccionario_variables</span></code> donde se describa cada par <code class="docutils literal notranslate"><span class="pre">código</span> <span class="pre">↔</span> <span class="pre">etiqueta</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="departamentos-y-municipios">
+<h3><strong>2.3 Departamentos y Municipios</strong><a class="headerlink" href="#departamentos-y-municipios" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Formato:</strong></p>
+<ul>
+<li><p>Todos los nombres en <strong>MAYÚSCULAS</strong></p></li>
+<li><p>Sin tildes ni caracteres especiales (A E I O U, Ñ normal).</p></li>
+<li><p><strong>El código del municipio</strong> debe tener siempre <strong>5 caracteres</strong> (añadir ceros a la izquierda si es necesario, p.ej. <code class="docutils literal notranslate"><span class="pre">08006</span></code>).</p></li>
+</ul>
+</li>
+<li><p><strong>Fuente canónica:</strong></p>
+<ul>
+<li><p>Respetar los nombres predeterminados ya asignados en el script <code class="docutils literal notranslate"><span class="pre">funciones/rename_nivel.py</span></code></p></li>
+<li><p>No crear variaciones; si falta un nombre, añádelo ahí siguiendo el mismo patrón.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="estructura-del-notebook">
+<h2><strong>3. Estructura del Notebook</strong><a class="headerlink" href="#estructura-del-notebook" title="Link to this heading">#</a></h2>
+</section>
+<section id="acceso-a-los-datos">
+<h2><strong>4. Acceso a los datos</strong><a class="headerlink" href="#acceso-a-los-datos" title="Link to this heading">#</a></h2>
+</section>
+<section id="referencias">
+<h2><strong>5. Referencias</strong><a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Fuentes de datos y recursos</strong><br />
+Siempre registrar y referenciar <strong>todas</strong> las fuentes de datos, scripts, librerías y cualquier otro recurso utilizado en este proyecto en el archivo <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>.</p></li>
+<li><p><strong>Convenciones de cita</strong><br />
+Uso de <strong>BibTeX</strong> para todas las entradas.</p></li>
+<li><p><strong>Actualización</strong><br />
+Cada vez que agregues o elimines datos o herramientas, <strong>actualiza</strong> inmediatamente <code class="docutils literal notranslate"><span class="pre">references.bib</span></code> para mantener el historial y la reproducibilidad.</p></li>
+</ul>
+</section>
+<section id="recuerda">
+<h2><strong>Recuerda:</strong><a class="headerlink" href="#recuerda" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Mantener celdas claras y comentadas.</p></li>
+<li><p>Si agregas nuevas convenciones, actualiza este bloque de “Reglas de Trabajo”.</p></li>
+</ul>
+</div></blockquote>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -433,12 +582,21 @@ El presente proyecto propone el desarrollo de una solución basada en inteligenc
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Convocatoria 38</strong></p>
+      </div>
+    </a>
     <a class="right-next"
-       href="reglas.html"
+       href="raw_to_processed.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Reglas de Trabajo</strong></p>
+        <p class="prev-next-title"><strong>Raw to Processed</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -448,6 +606,31 @@ El presente proyecto propone el desarrollo de una solución basada en inteligenc
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paleta-de-colores"><strong>1. Paleta de Colores</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convenciones-de-nombres"><strong>2. Convenciones de Nombres</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>2.1 Variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorias-de-variables"><strong>2.2 Categorías de Variables</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>2.3 Departamentos y Municipios</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-notebook"><strong>3. Estructura del Notebook</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-los-datos"><strong>4. Acceso a los datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias"><strong>5. Referencias</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recuerda"><strong>Recuerda:</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

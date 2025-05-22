@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Georeferenciación manzanas" href="manzanas.html" />
-    <link rel="prev" title="Convocatoria 38" href="intro.html" />
+    <link rel="prev" title="Raw to Processed" href="raw_to_processed.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,15 +180,19 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reglas.html"><strong>Reglas de Trabajo</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="raw_to_processed.html"><strong>Raw to Processed</strong></a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="anexos.html"><strong>Diccionarios de variables</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios de variables</strong></a></li>
 
 
 
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
     </div>
@@ -386,7 +390,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-divipola"><strong>Data DIVIPOLA</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-datos-faltantes"><strong>Método Datos faltantes</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida"><strong>Encuesta Nacional de Calidad de Vida</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtracion-por-columnas-de-interes"><strong>Filtración por columnas de interés</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>Departamentos y municipios</strong></a></li>
@@ -470,9 +473,9 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">missingno</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">msno</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones.faltantes</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span> 
 <span class="kn">from</span><span class="w"> </span><span class="nn">ydata_profiling</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProfileReport</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ydata_profiling.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Settings</span>
 </pre></div>
@@ -511,54 +514,16 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="metodo-datos-faltantes">
-<h2><strong>Método Datos faltantes</strong><a class="headerlink" href="#metodo-datos-faltantes" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="c1"># Identificar columnas con valores faltantes</span>
-    <span class="n">df_missing_columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()]</span>
-    
-    <span class="k">if</span> <span class="n">df_missing_columns</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No hay datos faltantes.&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># Calcular el porcentaje de valores faltantes por columna</span>
-        <span class="n">missing_percent</span> <span class="o">=</span> <span class="n">df_missing_columns</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
-        
-        <span class="c1"># Ordenar los porcentajes de mayor a menor</span>
-        <span class="n">missing_percent_sorted</span> <span class="o">=</span> <span class="n">missing_percent</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        
-        <span class="c1"># Graficar la distribución de datos faltantes con missingno</span>
-        <span class="n">msno</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df_missing_columns</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E77968&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;ascending&#39;</span><span class="p">)</span>
-        
-        <span class="c1"># Personalizar el gráfico</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Columnas con datos faltantes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        
-        <span class="c1"># Mostrar el gráfico</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-        
-        <span class="c1"># Retornar el porcentaje de columnas con datos faltantes</span>
-        <span class="k">return</span> <span class="n">missing_percent_sorted</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>En cada departamento ocurre un comportamiento y es que al observar los tamaños de la data de vivienda y georeferenciación notamos que contienen la misma cantidad de filas, es decir, de viviendas encuestadas. Mientras que en la de hogares y personas existen más datos debido a que en cada vivienda hay varios hogares y en cada hogar hay varias personas. Veamos cómo se puede relacionar.</p>
-</section>
 <section id="encuesta-nacional-de-calidad-de-vida">
 <h2><strong>Encuesta Nacional de Calidad de Vida</strong><a class="headerlink" href="#encuesta-nacional-de-calidad-de-vida" title="Link to this heading">#</a></h2>
 <p>Inicialmente, la encuesta nacional de calidad de vida cuenta con varios conjuntos de datos relacionados a diferentes ámbitos de la calidad de vida. En este caso, usaremos solamente cuatro, que son de interés para este trabajo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_servicios_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">servicios_hogar_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_salud_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">salud_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_internet_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">internet_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_vivienda_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">vivienda_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_hogar_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">hogar_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_servicios_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">servicios_hogar_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_salud_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">salud_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_internet_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">internet_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_vivienda_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">vivienda_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_hogar_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">hogar_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2785,10 +2750,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "afa76df4d11e4869bd958ec66b5bd0ee", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 30/30 [00:00&lt;00:00, 875.14it/s]
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "71b4934858254f5aa10098dafb7111c7", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 30/30 [00:00&lt;00:00, 338.49it/s]
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5504826eef5449f4a9b5cb0b0c4ed8e3", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "0d3932b568e44ed9a5b80725cca0082a", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "af70749233e0485c89364d718b26f969", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0f50fc380142442c87b6032f4d663d9c", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "9b446b76125a4d1880c4ab9b0c5da9ef", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "00e63ad94370420dabe3145281c71ca7", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
@@ -2797,7 +2762,7 @@ dtype: float64
 <p>Esta data esta relacionada a nivel municipal, es del año 2023 y representa el Riesgo de victimización en cada municipio mediante los clusters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_violencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_violencia.xlsx&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_violencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_violencia.xlsx&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4037,6 +4002,7 @@ Georeferenciación: (599159, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -4046,7 +4012,6 @@ Georeferenciación: (599159, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -4063,6 +4028,7 @@ Georeferenciación: (599159, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>36651</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4071,7 +4037,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4087,6 +4052,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>36661</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4095,7 +4061,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4111,6 +4076,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>36670</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4119,7 +4085,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4135,6 +4100,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>36674</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4143,7 +4109,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4159,6 +4124,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>36683</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4167,7 +4133,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4183,7 +4148,7 @@ Georeferenciación: (599159, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -4212,6 +4177,7 @@ Georeferenciación: (599159, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -4221,7 +4187,6 @@ Georeferenciación: (599159, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -4238,6 +4203,7 @@ Georeferenciación: (599159, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>36651</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4246,7 +4212,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4262,6 +4227,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>36683</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4270,7 +4236,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4286,12 +4251,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>5</th>
+      <td>36687</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4310,12 +4275,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>7</th>
+      <td>36695</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4334,6 +4299,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>8</th>
+      <td>36703</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4342,7 +4308,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4358,6 +4323,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>9</th>
+      <td>36704</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4366,7 +4332,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4382,12 +4347,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>10</th>
+      <td>36708</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4406,6 +4371,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>11</th>
+      <td>36711</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4414,7 +4380,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4430,6 +4395,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>13</th>
+      <td>36715</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4438,7 +4404,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4454,6 +4419,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>15</th>
+      <td>36722</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4462,7 +4428,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4478,6 +4443,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>16</th>
+      <td>36729</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4486,7 +4452,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4502,6 +4467,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>18</th>
+      <td>36732</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4510,7 +4476,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4526,6 +4491,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>19</th>
+      <td>36733</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4534,7 +4500,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4550,6 +4515,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>22</th>
+      <td>36756</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4558,7 +4524,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>99.0</td>
@@ -4574,6 +4539,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>24</th>
+      <td>36764</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4582,7 +4548,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4598,6 +4563,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>25</th>
+      <td>36772</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4606,7 +4572,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4622,12 +4587,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>26</th>
+      <td>36930</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4646,12 +4611,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>247</th>
+      <td>63111</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4670,12 +4635,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>18544</th>
+      <td>36742</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4694,6 +4659,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>18546</th>
+      <td>36770</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4702,7 +4668,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4718,6 +4683,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>18547</th>
+      <td>36775</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4726,7 +4692,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4742,12 +4707,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>18753</th>
+      <td>63109</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4766,6 +4731,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>34142</th>
+      <td>36678</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4774,7 +4740,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4790,6 +4755,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>34143</th>
+      <td>36686</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4798,7 +4764,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4814,6 +4779,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>34144</th>
+      <td>36701</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4822,7 +4788,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4838,6 +4803,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>34145</th>
+      <td>36728</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4846,7 +4812,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4862,6 +4827,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>34148</th>
+      <td>36766</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4870,7 +4836,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4886,6 +4851,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>49244</th>
+      <td>36667</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4894,7 +4860,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4910,12 +4875,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>49246</th>
+      <td>36765</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4934,6 +4899,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>63626</th>
+      <td>36640</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4942,7 +4908,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4958,6 +4923,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>63627</th>
+      <td>36652</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4966,7 +4932,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -4982,6 +4947,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>63628</th>
+      <td>36653</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -4990,7 +4956,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5006,6 +4971,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>63629</th>
+      <td>36654</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5014,7 +4980,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5030,6 +4995,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>63630</th>
+      <td>36664</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5038,7 +5004,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5054,6 +5019,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>63631</th>
+      <td>36681</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5062,7 +5028,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5078,6 +5043,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>63632</th>
+      <td>36700</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5086,7 +5052,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5102,12 +5067,12 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>89915</th>
+      <td>36741</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
       <td>001</td>
       <td>1300110000000023010104</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -5126,6 +5091,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>146220</th>
+      <td>36759</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5134,7 +5100,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5150,6 +5115,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>146221</th>
+      <td>36762</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5158,7 +5124,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5174,6 +5139,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>146222</th>
+      <td>36763</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5182,7 +5148,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5198,6 +5163,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>164268</th>
+      <td>901249714</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5206,7 +5172,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5222,6 +5187,7 @@ Georeferenciación: (599159, 14)
     </tr>
     <tr>
       <th>172480</th>
+      <td>902061114</td>
       <td>CARTAGENA DE INDIAS</td>
       <td>BOLÍVAR</td>
       <td>13</td>
@@ -5230,7 +5196,6 @@ Georeferenciación: (599159, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5246,7 +5211,7 @@ Georeferenciación: (599159, 14)
     </tr>
   </tbody>
 </table>
-<p>42 rows × 21 columns</p>
+<p>42 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -5601,6 +5566,7 @@ Georeferenciación: (354629, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -5610,7 +5576,6 @@ Georeferenciación: (354629, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -5627,6 +5592,7 @@ Georeferenciación: (354629, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>837894</td>
       <td>VALLEDUPAR</td>
       <td>CESAR</td>
       <td>20</td>
@@ -5635,7 +5601,6 @@ Georeferenciación: (354629, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5651,6 +5616,7 @@ Georeferenciación: (354629, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>837899</td>
       <td>VALLEDUPAR</td>
       <td>CESAR</td>
       <td>20</td>
@@ -5659,7 +5625,6 @@ Georeferenciación: (354629, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5675,6 +5640,7 @@ Georeferenciación: (354629, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>837904</td>
       <td>VALLEDUPAR</td>
       <td>CESAR</td>
       <td>20</td>
@@ -5683,7 +5649,6 @@ Georeferenciación: (354629, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5699,6 +5664,7 @@ Georeferenciación: (354629, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>837926</td>
       <td>VALLEDUPAR</td>
       <td>CESAR</td>
       <td>20</td>
@@ -5707,7 +5673,6 @@ Georeferenciación: (354629, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5723,6 +5688,7 @@ Georeferenciación: (354629, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>837928</td>
       <td>VALLEDUPAR</td>
       <td>CESAR</td>
       <td>20</td>
@@ -5731,7 +5697,6 @@ Georeferenciación: (354629, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -5747,7 +5712,7 @@ Georeferenciación: (354629, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -5997,6 +5962,7 @@ Georeferenciación: (465618, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -6006,7 +5972,6 @@ Georeferenciación: (465618, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -6023,6 +5988,7 @@ Georeferenciación: (465618, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>1009985</td>
       <td>MONTERÍA</td>
       <td>CÓRDOBA</td>
       <td>23</td>
@@ -6031,7 +5997,6 @@ Georeferenciación: (465618, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6047,6 +6012,7 @@ Georeferenciación: (465618, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>1009986</td>
       <td>MONTERÍA</td>
       <td>CÓRDOBA</td>
       <td>23</td>
@@ -6055,7 +6021,6 @@ Georeferenciación: (465618, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6071,6 +6036,7 @@ Georeferenciación: (465618, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>1009997</td>
       <td>MONTERÍA</td>
       <td>CÓRDOBA</td>
       <td>23</td>
@@ -6078,7 +6044,6 @@ Georeferenciación: (465618, 14)
       <td>2300110000000000110115</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
@@ -6095,6 +6060,7 @@ Georeferenciación: (465618, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>1010517</td>
       <td>MONTERÍA</td>
       <td>CÓRDOBA</td>
       <td>23</td>
@@ -6103,7 +6069,6 @@ Georeferenciación: (465618, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>4.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6119,6 +6084,7 @@ Georeferenciación: (465618, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>1010521</td>
       <td>MONTERÍA</td>
       <td>CÓRDOBA</td>
       <td>23</td>
@@ -6127,7 +6093,6 @@ Georeferenciación: (465618, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>4.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6143,7 +6108,7 @@ Georeferenciación: (465618, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -6418,6 +6383,7 @@ Georeferenciación: (239595, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -6427,7 +6393,6 @@ Georeferenciación: (239595, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -6444,12 +6409,12 @@ Georeferenciación: (239595, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>351875</td>
       <td>RIOHACHA</td>
       <td>LA GUAJIRA</td>
       <td>44</td>
       <td>001</td>
       <td>4400110000000001040402</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -6468,6 +6433,7 @@ Georeferenciación: (239595, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>351908</td>
       <td>RIOHACHA</td>
       <td>LA GUAJIRA</td>
       <td>44</td>
@@ -6476,7 +6442,6 @@ Georeferenciación: (239595, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6492,6 +6457,7 @@ Georeferenciación: (239595, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>352022</td>
       <td>RIOHACHA</td>
       <td>LA GUAJIRA</td>
       <td>44</td>
@@ -6500,7 +6466,6 @@ Georeferenciación: (239595, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6516,6 +6481,7 @@ Georeferenciación: (239595, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>352981</td>
       <td>RIOHACHA</td>
       <td>LA GUAJIRA</td>
       <td>44</td>
@@ -6523,7 +6489,6 @@ Georeferenciación: (239595, 14)
       <td>4400110000000004160207</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
@@ -6540,6 +6505,7 @@ Georeferenciación: (239595, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>379761</td>
       <td>RIOHACHA</td>
       <td>LA GUAJIRA</td>
       <td>44</td>
@@ -6548,7 +6514,6 @@ Georeferenciación: (239595, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6564,7 +6529,7 @@ Georeferenciación: (239595, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -6764,6 +6729,7 @@ Georeferenciación: (395154, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -6773,7 +6739,6 @@ Georeferenciación: (395154, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -6790,6 +6755,7 @@ Georeferenciación: (395154, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>577337</td>
       <td>SANTA MARTA</td>
       <td>MAGDALENA</td>
       <td>47</td>
@@ -6798,7 +6764,6 @@ Georeferenciación: (395154, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6814,6 +6779,7 @@ Georeferenciación: (395154, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>577428</td>
       <td>SANTA MARTA</td>
       <td>MAGDALENA</td>
       <td>47</td>
@@ -6821,7 +6787,6 @@ Georeferenciación: (395154, 14)
       <td>4700110000000000750328</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
@@ -6838,6 +6803,7 @@ Georeferenciación: (395154, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>577505</td>
       <td>SANTA MARTA</td>
       <td>MAGDALENA</td>
       <td>47</td>
@@ -6846,7 +6812,6 @@ Georeferenciación: (395154, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>4.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6862,6 +6827,7 @@ Georeferenciación: (395154, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>577552</td>
       <td>SANTA MARTA</td>
       <td>MAGDALENA</td>
       <td>47</td>
@@ -6870,7 +6836,6 @@ Georeferenciación: (395154, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6886,6 +6851,7 @@ Georeferenciación: (395154, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>577644</td>
       <td>SANTA MARTA</td>
       <td>MAGDALENA</td>
       <td>47</td>
@@ -6894,7 +6860,6 @@ Georeferenciación: (395154, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -6910,7 +6875,7 @@ Georeferenciación: (395154, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -7185,6 +7150,7 @@ Georeferenciación: (268212, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -7194,7 +7160,6 @@ Georeferenciación: (268212, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -7211,6 +7176,7 @@ Georeferenciación: (268212, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>604293</td>
       <td>SINCELEJO</td>
       <td>SUCRE</td>
       <td>70</td>
@@ -7218,7 +7184,6 @@ Georeferenciación: (268212, 14)
       <td>7000110000000000010136</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
@@ -7235,6 +7200,7 @@ Georeferenciación: (268212, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>604355</td>
       <td>SINCELEJO</td>
       <td>SUCRE</td>
       <td>70</td>
@@ -7242,7 +7208,6 @@ Georeferenciación: (268212, 14)
       <td>7000110000000000081108</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
@@ -7259,12 +7224,12 @@ Georeferenciación: (268212, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>604361</td>
       <td>SINCELEJO</td>
       <td>SUCRE</td>
       <td>70</td>
       <td>001</td>
       <td>7000110000000000070126</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -7283,6 +7248,7 @@ Georeferenciación: (268212, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>604368</td>
       <td>SINCELEJO</td>
       <td>SUCRE</td>
       <td>70</td>
@@ -7291,7 +7257,6 @@ Georeferenciación: (268212, 14)
       <td>NaN</td>
       <td>NaN</td>
       <td>3.0</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
       <td>1.0</td>
@@ -7307,6 +7272,7 @@ Georeferenciación: (268212, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>604382</td>
       <td>SINCELEJO</td>
       <td>SUCRE</td>
       <td>70</td>
@@ -7314,7 +7280,6 @@ Georeferenciación: (268212, 14)
       <td>7000110000000000081121</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
       <td>1.0</td>
       <td>1.0</td>
       <td>...</td>
@@ -7331,7 +7296,7 @@ Georeferenciación: (268212, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -7586,6 +7551,7 @@ Georeferenciación: (18423, 14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>COD_ENCUESTAS</th>
       <th>MUNICIPIO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_DPTO</th>
@@ -7595,7 +7561,6 @@ Georeferenciación: (18423, 14)
       <th>TIPO_TERR_ETNICA</th>
       <th>ESTRATO</th>
       <th>ENERGIA</th>
-      <th>ACUEDUCTO</th>
       <th>...</th>
       <th>AGUA_COCINA</th>
       <th>LUGAR_COCINA</th>
@@ -7612,6 +7577,7 @@ Georeferenciación: (18423, 14)
   <tbody>
     <tr>
       <th>0</th>
+      <td>263</td>
       <td>SAN ANDRÉS</td>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SAN...</td>
       <td>88</td>
@@ -7621,7 +7587,6 @@ Georeferenciación: (18423, 14)
       <td>NaN</td>
       <td>3.0</td>
       <td>1.0</td>
-      <td>2.0</td>
       <td>...</td>
       <td>11.0</td>
       <td>1.0</td>
@@ -7636,6 +7601,7 @@ Georeferenciación: (18423, 14)
     </tr>
     <tr>
       <th>1</th>
+      <td>21426</td>
       <td>SAN ANDRÉS</td>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SAN...</td>
       <td>88</td>
@@ -7645,7 +7611,6 @@ Georeferenciación: (18423, 14)
       <td>NaN</td>
       <td>2.0</td>
       <td>1.0</td>
-      <td>2.0</td>
       <td>...</td>
       <td>11.0</td>
       <td>3.0</td>
@@ -7660,6 +7625,7 @@ Georeferenciación: (18423, 14)
     </tr>
     <tr>
       <th>2</th>
+      <td>120456</td>
       <td>SAN ANDRÉS</td>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SAN...</td>
       <td>88</td>
@@ -7669,7 +7635,6 @@ Georeferenciación: (18423, 14)
       <td>NaN</td>
       <td>2.0</td>
       <td>1.0</td>
-      <td>2.0</td>
       <td>...</td>
       <td>11.0</td>
       <td>1.0</td>
@@ -7684,6 +7649,7 @@ Georeferenciación: (18423, 14)
     </tr>
     <tr>
       <th>3</th>
+      <td>120459</td>
       <td>SAN ANDRÉS</td>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SAN...</td>
       <td>88</td>
@@ -7693,7 +7659,6 @@ Georeferenciación: (18423, 14)
       <td>NaN</td>
       <td>1.0</td>
       <td>1.0</td>
-      <td>2.0</td>
       <td>...</td>
       <td>11.0</td>
       <td>3.0</td>
@@ -7708,6 +7673,7 @@ Georeferenciación: (18423, 14)
     </tr>
     <tr>
       <th>4</th>
+      <td>160380</td>
       <td>SAN ANDRÉS</td>
       <td>ARCHIPIÉLAGO DE SAN ANDRÉS Y PROVIDENCIA Y SAN...</td>
       <td>88</td>
@@ -7717,7 +7683,6 @@ Georeferenciación: (18423, 14)
       <td>NaN</td>
       <td>2.0</td>
       <td>1.0</td>
-      <td>2.0</td>
       <td>...</td>
       <td>11.0</td>
       <td>1.0</td>
@@ -7732,7 +7697,7 @@ Georeferenciación: (18423, 14)
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -7825,7 +7790,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3023205, 21)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3023205, 22)
 </pre></div>
 </div>
 </div>
@@ -8287,8 +8252,8 @@ dtype: float64
 <h2><strong>Encuesta de cultura política</strong><a class="headerlink" href="#encuesta-de-cultura-politica" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ecc_democracia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_ecc</span><span class="se">\\</span><span class="s2">democracia_ecc_2023.CSV&quot;</span><span class="p">)</span>
-<span class="n">df_ecc_viviendas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_ecc</span><span class="se">\\</span><span class="s2">viviendas_ecc_2023.CSV&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ecc_democracia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecc</span><span class="se">\\</span><span class="s2">democracia_ecc_2023.CSV&quot;</span><span class="p">)</span>
+<span class="n">df_ecc_viviendas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecc</span><span class="se">\\</span><span class="s2">viviendas_ecc_2023.CSV&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8797,7 +8762,7 @@ dtype: float64
 <p>El Producto Interno Bruto (PIB) en Colombia es una medida clave de la actividad económica de cada uno de los departamentos del país. Al analizar el PIB de un departamento, se puede obtener una visión general de su capacidad productiva y de su nivel de desarrollo económico. Un PIB bajo o en crecimiento lento puede reflejar un nivel de pobreza más alto, ya que indica una menor generación de riqueza en comparación con otros departamentos. Además, una correlación entre el PIB per cápita y las tasas de pobreza permite identificar áreas con más necesidades, donde los recursos limitados pueden no ser suficientes para satisfacer las demandas básicas de la población. De esta forma, el PIB se convierte en una herramienta útil para evaluar las disparidades económicas y focalizar esfuerzos de políticas públicas que busquen mitigar la pobreza.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pib</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">datos-externos-convocatoria38</span><span class="se">\\</span><span class="s2">data_pib.xlsx&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_pib</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_pib.xlsx&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9123,12 +9088,12 @@ dtype: float64
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="raw_to_processed.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Convocatoria 38</strong></p>
+        <p class="prev-next-title"><strong>Raw to Processed</strong></p>
       </div>
     </a>
     <a class="right-next"
@@ -9158,7 +9123,6 @@ dtype: float64
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-divipola"><strong>Data DIVIPOLA</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-datos-faltantes"><strong>Método Datos faltantes</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida"><strong>Encuesta Nacional de Calidad de Vida</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtracion-por-columnas-de-interes"><strong>Filtración por columnas de interés</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>Departamentos y municipios</strong></a></li>
