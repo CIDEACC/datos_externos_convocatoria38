@@ -148,14 +148,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo_cideacc.png" class="logo__image only-light" alt="Convocatoria 38. - Home"/>
-    <script>document.write(`<img src="_static/logo_cideacc.png" class="logo__image only-dark" alt="Convocatoria 38. - Home"/>`);</script>
   
+    <p class="title logo__title">Convocatoria 38.</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -185,13 +179,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios de variables</strong></a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="diccionarios_update.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
@@ -388,11 +376,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paleta-de-colores"><strong>1. Paleta de Colores</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-del-proyecto"><strong>1. Diseño del proyecto</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paleta-de-colores"><strong>1.1 Paleta de colores</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipografia-de-las-graficas"><strong>1.2 Tipografía de las gráficas</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convenciones-de-nombres"><strong>2. Convenciones de Nombres</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>2.1 Variables</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorias-de-variables"><strong>2.2 Categorías de Variables</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>2.3 Departamentos y Municipios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>2.2 Departamentos y Municipios</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-notebook"><strong>3. Estructura del Notebook</strong></a></li>
@@ -413,9 +404,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="reglas-de-trabajo">
 <h1><strong>Reglas de Trabajo</strong><a class="headerlink" href="#reglas-de-trabajo" title="Link to this heading">#</a></h1>
 <p>Este documento agrupa las convenciones y estándares que debemos respetar al construir y procesar nuestro conjunto de datos.</p>
+<section id="diseno-del-proyecto">
+<h2><strong>1. Diseño del proyecto</strong><a class="headerlink" href="#diseno-del-proyecto" title="Link to this heading">#</a></h2>
 <section id="paleta-de-colores">
-<h2><strong>1. Paleta de Colores</strong><a class="headerlink" href="#paleta-de-colores" title="Link to this heading">#</a></h2>
-<p>Usaremos la siguiente escala para resaltar secciones, gráficos y tablas. Cada color está definido por su código hexadecimal y su nombre:</p>
+<h3><strong>1.1 Paleta de colores</strong><a class="headerlink" href="#paleta-de-colores" title="Link to this heading">#</a></h3>
+<p>Usaremos la siguiente escala (extraída de <a class="reference external" href="https://coolors.co/7209b7-640ab2-560bad-3a0ca3-3f37c9-4361ee-467bef-4895ef-4aaff0">Coolors</a>) para resaltar secciones, gráficos y tablas. Cada color está definido por su código hexadecimal y su nombre:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Muestra</p></th>
@@ -424,45 +417,64 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#4F000B;"></span></p></td>
-<td class="text-left"><p>Chocolate cosmos</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#4F000B</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#7209B7;"></span></p></td>
+<td class="text-left"><p>Grape</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#7209B7</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#720026;"></span></p></td>
-<td class="text-left"><p>Claret</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#720026</span></code></p></td>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#640AB2;"></span></p></td>
+<td class="text-left"><p>Grape</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#640AB2</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#A0213F;"></span></p></td>
-<td class="text-left"><p>Amaranth purple</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#A0213F</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#560BAD;"></span></p></td>
+<td class="text-left"><p>Chrysler blue</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#560BAD</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#CE4257;"></span></p></td>
-<td class="text-left"><p>Amaranth</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#CE4257</span></code></p></td>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#3A0CA3;"></span></p></td>
+<td class="text-left"><p>Zaffre</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#3A0CA3</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#E76154;"></span></p></td>
-<td class="text-left"><p>Bittersweet</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#E76154</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#3F37C9;"></span></p></td>
+<td class="text-left"><p>Palatinate blue</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#3F37C9</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#F37053;"></span></p></td>
-<td class="text-left"><p>Burnt sienna</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#F37053</span></code></p></td>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#4361EE;"></span></p></td>
+<td class="text-left"><p>Neon blue</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#4361EE</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#FF7F51;"></span></p></td>
-<td class="text-left"><p>Coral</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#FF7F51</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#467BEF;"></span></p></td>
+<td class="text-left"><p>Blue (Crayola)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#467BEF</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#FF8D53;"></span></p></td>
-<td class="text-left"><p>Atomic tangerine</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#FF8D53</span></code></p></td>
+<tr class="row-odd"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#4895EF;"></span></p></td>
+<td class="text-left"><p>Chefchaouen Blue</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#4895EF</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#FF9B54;"></span></p></td>
-<td class="text-left"><p>Sandy brown</p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#FF9B54</span></code></p></td>
+<tr class="row-even"><td class="text-center"><p><span style="display:inline-block;width:40px;height:20px;background:#4AAFF0;"></span></p></td>
+<td class="text-left"><p>Picton Blue</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">#4AAFF0</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</section>
+<section id="tipografia-de-las-graficas">
+<h3><strong>1.2 Tipografía de las gráficas</strong><a class="headerlink" href="#tipografia-de-las-graficas" title="Link to this heading">#</a></h3>
+<p>Para todas las visualizaciones del proyecto utilizaremos la fuente <strong>Bahnscripg</strong>. Esta tipografía se ha seleccionado por su legibilidad y su estilo moderno, que complementa la paleta de colores definida. A continuación, las especificaciones de uso:</p>
+<ul class="simple">
+<li><p><strong>Familia</strong>: <code class="docutils literal notranslate"><span class="pre">Bahnscripg</span></code></p></li>
+<li><p><strong>Tamaño base de títulos</strong>: 14 pt</p></li>
+<li><p><strong>Tamaño base de ejes y etiquetas</strong>: 10 pt</p></li>
+<li><p><strong>Peso recomendado</strong>: Regular</p></li>
+<li><p><strong>Estilo</strong>: Sin cursiva ni negrita por defecto, salvo destacar elementos específicos.</p></li>
+</ul>
+<p><strong>Nota técnica</strong>: En Matplotlib, se configura mediante:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;Bahnschrift&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
 </section>
 <section id="convenciones-de-nombres">
 <h2><strong>2. Convenciones de Nombres</strong><a class="headerlink" href="#convenciones-de-nombres" title="Link to this heading">#</a></h2>
@@ -489,24 +501,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="categorias-de-variables">
-<h3><strong>2.2 Categorías de Variables</strong><a class="headerlink" href="#categorias-de-variables" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Codificación:</strong></p>
-<ul>
-<li><p>Las variables CATEGÓRICAS se codifican numéricamente para facilitar el procesamiento.</p></li>
-<li><p>Cada código numérico se mapea a un valor textual en el <strong>Diccionario de Variables</strong>.</p></li>
-</ul>
-</li>
-<li><p><strong>Acceso:</strong></p>
-<ul>
-<li><p>Para interpretar cualquier categoría, consultar el <code class="docutils literal notranslate"><span class="pre">diccionario_variables</span></code> donde se describa cada par <code class="docutils literal notranslate"><span class="pre">código</span> <span class="pre">↔</span> <span class="pre">etiqueta</span></code>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
 <section id="departamentos-y-municipios">
-<h3><strong>2.3 Departamentos y Municipios</strong><a class="headerlink" href="#departamentos-y-municipios" title="Link to this heading">#</a></h3>
+<h3><strong>2.2 Departamentos y Municipios</strong><a class="headerlink" href="#departamentos-y-municipios" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Formato:</strong></p>
 <ul>
@@ -616,11 +612,14 @@ Cada vez que agregues o elimines datos o herramientas, <strong>actualiza</strong
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paleta-de-colores"><strong>1. Paleta de Colores</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diseno-del-proyecto"><strong>1. Diseño del proyecto</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paleta-de-colores"><strong>1.1 Paleta de colores</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipografia-de-las-graficas"><strong>1.2 Tipografía de las gráficas</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convenciones-de-nombres"><strong>2. Convenciones de Nombres</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>2.1 Variables</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorias-de-variables"><strong>2.2 Categorías de Variables</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>2.3 Departamentos y Municipios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departamentos-y-municipios"><strong>2.2 Departamentos y Municipios</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-notebook"><strong>3. Estructura del Notebook</strong></a></li>

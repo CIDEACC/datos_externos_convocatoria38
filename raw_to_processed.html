@@ -148,14 +148,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo_cideacc.png" class="logo__image only-light" alt="Convocatoria 38. - Home"/>
-    <script>document.write(`<img src="_static/logo_cideacc.png" class="logo__image only-dark" alt="Convocatoria 38. - Home"/>`);</script>
   
+    <p class="title logo__title">Convocatoria 38.</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -185,13 +179,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios de variables</strong></a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="diccionarios_update.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
@@ -393,14 +381,21 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicaciones-para-el-analisis-y-limpieza-de-cada-conjunto-de-datos"><strong>Indicaciones para el análisis y limpieza de cada conjunto de datos</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-departamental"><strong>Nivel: Departamental</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data: Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-departamental"><strong>Nivel: Departamental</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-pib-producto-interno-bruto"><strong>Data PIB (Producto Interno Bruto)</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-censo-nacional-de-poblacion-y-vivienda-2018"><strong>Data Censo Nacional de Población y Vivienda 2018</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias"><strong>Referencias</strong></a></li>
@@ -422,11 +417,16 @@ document.write(`
 <h2><strong>Librerías y modulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones.faltantes</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_pib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_calidad_agua</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_acceso_internet</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_casos_de_homicidio</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_censo.data_censo_dane</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_riesgo_de_victimizacion</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -452,19 +452,122 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 </section>
 <section id="nivel-departamental">
 <h2><strong>Nivel: Departamental</strong><a class="headerlink" href="#nivel-departamental" title="Link to this heading">#</a></h2>
+<section id="data-pib-producto-interno-bruto">
+<h3><strong>Data PIB (Producto Interno Bruto)</strong><a class="headerlink" href="#data-pib-producto-interno-bruto" title="Link to this heading">#</a></h3>
+<p><strong>Descripción:</strong></p>
+<p>El Producto Interno Bruto <strong>(PIB)</strong> en Colombia es una medida clave de la actividad económica de cada uno de los departamentos del país. Al analizar el PIB de un departamento, se puede obtener una visión general de su capacidad productiva y de su nivel de desarrollo económico. Un PIB bajo o en crecimiento lento puede reflejar un nivel de pobreza más alto, ya que indica una menor generación de riqueza en comparación con otros departamentos. Además, una correlación entre el PIB per cápita y las tasas de pobreza permite identificar áreas con más necesidades, donde los recursos limitados pueden no ser suficientes para satisfacer las demandas básicas de la población. De esta forma, el PIB se convierte en una herramienta útil para evaluar las disparidades económicas y focalizar esfuerzos de políticas públicas que busquen mitigar la pobreza.</p>
+<p><em><strong>Observación</strong></em>:El conjunto de datos contiene el histórico del valor del PIB departamental a precios corrientes y la participación porcentual de cada departamento en el PIB nacional.</p>
+<p><strong>Fuentes:</strong></p>
+<ul class="simple">
+<li><p>Pagina oficial: <span id="id1">[<a class="reference internal" href="#id20" title="Departamento Administrativo Nacional de Estadística (DANE). Cuentas nacionales departamentales: PIB por departamento. https://www.dane.gov.co/index.php/estadisticas-por-tema/cuentas-nacionales/cuentas-nacionales-departamentales, 2025. Información actualizada el 28 de marzo de 2025. Consultado el 28 de mayo de 2025.">3</a>]</span></p></li>
+</ul>
+<p><strong>Diccionario de variables:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_pib</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://docs.google.com/spreadsheets/d/1xywhKY3jsXeYFKP8dVrPJKb5wAsmmiV9/export?format=csv&quot;</span><span class="p">)</span>
+<span class="n">data_processed_pib</span> <span class="o">=</span> <span class="n">data_cleaned_pib</span><span class="p">(</span><span class="n">data_raw_pib</span><span class="p">,</span> <span class="s1">&#39;CARIBE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">data_processed_pib</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No hay datos faltantes.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_pib</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>DEPARTAMENTO</th>
+      <th>PIB</th>
+      <th>PARTICIPACION_PORCENTUAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>70.862</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>13</td>
+      <td>BOLIVAR</td>
+      <td>56.924</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>20</td>
+      <td>CESAR</td>
+      <td>34.821</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>23</td>
+      <td>CORDOBA</td>
+      <td>28.303</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>44</td>
+      <td>LA GUAJIRA</td>
+      <td>20.346</td>
+      <td>1.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 </section>
 <section id="nivel-municipal">
 <h2><strong>Nivel: Municipal</strong><a class="headerlink" href="#nivel-municipal" title="Link to this heading">#</a></h2>
 <section id="data-calidad-del-agua-para-consumo-humano-en-colombia">
-<h3><strong>Data: Calidad del Agua para Consumo Humano en Colombia</strong><a class="headerlink" href="#data-calidad-del-agua-para-consumo-humano-en-colombia" title="Link to this heading">#</a></h3>
+<h3><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong><a class="headerlink" href="#data-calidad-del-agua-para-consumo-humano-en-colombia" title="Link to this heading">#</a></h3>
 <p><strong>Descripción:</strong></p>
 <p>El Sistema de Información de la Vigilancia de la Calidad del Agua de Potable <strong>(SIVICAP)</strong> fue creado para monitorear la calidad del agua potable en Colombia desde la perspectiva de la vigilancia en salud pública. Este sistema genera el Índice de Riesgo de la Calidad de Agua Potable <strong>(IRCA)</strong>, que cuantifica en porcentaje el nivel de riesgo de ocurrencia de enfermedades asociadas al incumplimiento de características físicas, químicas y microbiológicas del agua destinada al consumo humano.</p>
 <p><em><strong>Observación:</strong></em> El conjunto de datos contiene históricos del valor promedio anual del IRCA, desagregados por departamento, municipio, área urbana y área rural, cubriendo el periodo desde 2007 en adelante. En este caso, el nivel escogido es municipal.</p>
 <p><strong>Fuentes:</strong></p>
 <ul class="simple">
-<li><p>Pagina oficial: <span id="id1">[<a class="reference internal" href="#id7" title="Instituto Nacional de Salud de Colombia. Sivicap. 2025. Página oficial. URL: https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx.">3</a>]</span></p></li>
-<li><p>Datos: <span id="id2">[<a class="reference internal" href="#id8" title="Gobierno de Colombia. Calidad del agua para consumo humano en colombia. Datos abiertos (datos.gov.co), 2025. Accedido el 22 de mayo de 2025. URL: https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data.">2</a>]</span></p></li>
+<li><p>Pagina oficial: <span id="id2">[<a class="reference internal" href="#id11" title="Instituto Nacional de Salud de Colombia. Sivicap. 2025. Página oficial. URL: https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx.">6</a>]</span></p></li>
+<li><p>Datos: <span id="id3">[<a class="reference internal" href="#id12" title="Gobierno de Colombia. Calidad del agua para consumo humano en colombia. Datos abiertos (datos.gov.co), 2025. Accedido el 22 de mayo de 2025. URL: https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data.">5</a>]</span></p></li>
 </ul>
+<p><strong>Diccionario de variables:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_calidad_agua</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1rPVSPwtca-q248RwKBYuEqO8BE1pzvMn&quot;</span><span class="p">)</span>
@@ -515,7 +618,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <th>COD_MUNI</th>
       <th>IRCA</th>
       <th>NIVEL_RIESGO</th>
-      <th>NIVEL_RIESGO_COD</th>
       <th>MUNICIPIO</th>
     </tr>
   </thead>
@@ -527,7 +629,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>70235</td>
       <td>4.6</td>
       <td>Sin riesgo</td>
-      <td>0</td>
       <td>GALERAS</td>
     </tr>
     <tr>
@@ -537,7 +638,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>08001</td>
       <td>0.0</td>
       <td>Sin riesgo</td>
-      <td>0</td>
       <td>BARRANQUILLA</td>
     </tr>
     <tr>
@@ -547,7 +647,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>08078</td>
       <td>10.5</td>
       <td>Riesgo bajo</td>
-      <td>1</td>
       <td>BARANOA</td>
     </tr>
     <tr>
@@ -557,7 +656,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>08137</td>
       <td>0.0</td>
       <td>Sin riesgo</td>
-      <td>0</td>
       <td>CAMPO DE LA CRUZ</td>
     </tr>
     <tr>
@@ -567,14 +665,12 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>08141</td>
       <td>0.0</td>
       <td>Sin riesgo</td>
-      <td>0</td>
       <td>CANDELARIA</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Diccionario de variables : poner enlace</p>
 </section>
 <section id="data-acceso-a-internet">
 <h3><strong>Data Acceso a Internet</strong><a class="headerlink" href="#data-acceso-a-internet" title="Link to this heading">#</a></h3>
@@ -583,19 +679,14 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 <p><em><strong>Observación:</strong></em> En la base de datos se tienen los registros de los <code class="docutils literal notranslate"><span class="pre">accesos</span> <span class="pre">de</span> <span class="pre">interner</span> <span class="pre">fijos</span> <span class="pre">por</span> <span class="pre">cada</span> <span class="pre">100</span> <span class="pre">habitantes</span> <span class="pre">por</span> <span class="pre">departamentos</span> <span class="pre">y</span> <span class="pre">municipios</span> <span class="pre">de</span> <span class="pre">Colombia</span></code> desde año a año</p>
 <p><strong>Fuentes:</strong></p>
 <ul class="simple">
-<li><p>Pagina oficial: <span id="id3">[<a class="reference internal" href="#id9" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: https://colombiatic.mintic.gov.co/679/w3-channel.html.">4</a>]</span></p></li>
-<li><p>Datos: <span id="id4">[<a class="reference internal" href="#id10" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8.">5</a>]</span></p></li>
+<li><p>Pagina oficial: <span id="id4">[<a class="reference internal" href="#id13" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: https://colombiatic.mintic.gov.co/679/w3-channel.html.">7</a>]</span></p></li>
+<li><p>Datos: <span id="id5">[<a class="reference internal" href="#id14" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8.">8</a>]</span></p></li>
 </ul>
+<p><strong>Diccionario de variables</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_internet</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1itLnFvy4_OBlT57dzn__VxBtkSUA7XFr&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_internet</span> <span class="o">=</span> <span class="n">data_cleaned_acceso_internet</span><span class="p">(</span><span class="n">data_raw_internet</span><span class="p">,</span> <span class="s1">&#39;CARIBE&#39;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
+<span class="n">data_processed_internet</span> <span class="o">=</span> <span class="n">data_cleaned_acceso_internet</span><span class="p">(</span><span class="n">data_raw_internet</span><span class="p">,</span> <span class="s1">&#39;CARIBE&#39;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -703,8 +794,9 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 <p><em><strong>Observación:</strong></em> En la base de datos se tienen los registros de los <code class="docutils literal notranslate"><span class="pre">casos</span> <span class="pre">de</span> <span class="pre">homicidio</span> <span class="pre">que</span> <span class="pre">se</span> <span class="pre">presentaron</span> <span class="pre">por</span> <span class="pre">departamentos</span> <span class="pre">y</span> <span class="pre">municipios</span> <span class="pre">de</span> <span class="pre">Colombia</span></code> desde 2003 a 2025</p>
 <p><strong>Fuentes:</strong></p>
 <ul class="simple">
-<li><p>Datos: <span id="id5">[<a class="reference internal" href="#id11" title="Datos Abiertos Colombia. Homicidio. 2025. Conjunto de datos abierto sobre homicidios en Colombia. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data.">1</a>]</span></p></li>
+<li><p>Datos: <span id="id6">[<a class="reference internal" href="#id15" title="Datos Abiertos Colombia. Homicidio. 2025. Conjunto de datos abierto sobre homicidios en Colombia. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data.">1</a>]</span></p></li>
 </ul>
+<p><strong>Diccionario de variables:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_homicidios</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://drive.google.com/uc?export=download&amp;id=1ZjHIxKmfboAtuAPWdAH14JMOe5yMujBo&#39;</span><span class="p">)</span>
@@ -809,34 +901,392 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 </div></div></div>
 </div>
 </section>
+<section id="data-riesgo-de-victimizacion">
+<h3><strong>Data Riesgo de victimización</strong><a class="headerlink" href="#data-riesgo-de-victimizacion" title="Link to this heading">#</a></h3>
+<p><strong>Descripción:</strong><br />
+El Índice de Riesgo de Victimización es una medida compuesta que integra múltiples indicadores socioeconómicos y de seguridad para cuantificar la probabilidad de ocurrencia de nuevos episodios de violencia en cada municipio de Colombia. Este índice facilita la identificación temprana de zonas con mayores niveles de vulnerabilidad, apoyando la focalización de recursos y acciones preventivas en el marco del Plan Nacional de Atención y Reparación Integral a las Víctimas.</p>
+<p><em><strong>Observación:</strong></em><br />
+Para cada municipio se reporta:</p>
+<ul class="simple">
+<li><p>El valor estimado del índice de riesgo de victimización.</p></li>
+<li><p>El clúster al que pertenece según niveles de riesgo (bajo, medio, alto).</p></li>
+<li><p>Si el municipio pertenece a los Programas de Desarrollo con Enfoque Territorial (PDET) o no.</p></li>
+</ul>
+<p><strong>Fuentes:</strong></p>
+<ul class="simple">
+<li><p>Página oficial y datos: <span id="id7">[<a class="reference internal" href="#id17" title="Unidad para la Atención y Reparación Integral a las Víctimas. Índice de Riesgo de Victimización. Sitio web, 2025. Consultado el 24 de mayo de 2025. URL: https://datospaz.unidadvictimas.gov.co/indice-de-riesgo-de-victimizacion/.">9</a>]</span></p></li>
+</ul>
+<p><strong>Diccionario de variables</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_riesgo_de_victimizacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://docs.google.com/spreadsheets/d/1qEo0NCDoLLb9RayhLiIibxlQ6xiD9xI1/export?format=csv&#39;</span><span class="p">)</span>
+<span class="n">data_processed_riesgo_de_victimizacion</span> <span class="o">=</span> <span class="n">data_cleaned_riesgo_de_victimizacion</span><span class="p">(</span><span class="n">data_raw_riesgo_de_victimizacion</span><span class="p">,</span> <span class="s1">&#39;CARIBE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">data_processed_riesgo_de_victimizacion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No hay datos faltantes.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_riesgo_de_victimizacion</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>COD_MUNI</th>
+      <th>DEPARTAMENTO</th>
+      <th>VALOR_ESTIMADO_CLUSTER</th>
+      <th>CLUSTER_RIESGO</th>
+      <th>PDET_FLAG</th>
+      <th>PDET_SITIO</th>
+      <th>MUNICIPIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>125</th>
+      <td>08</td>
+      <td>08001</td>
+      <td>ATLANTICO</td>
+      <td>0.118209</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>BARRANQUILLA</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>08</td>
+      <td>08078</td>
+      <td>ATLANTICO</td>
+      <td>0.087091</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>BARANOA</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>08</td>
+      <td>08137</td>
+      <td>ATLANTICO</td>
+      <td>0.083355</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>CAMPO DE LA CRUZ</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>08</td>
+      <td>08141</td>
+      <td>ATLANTICO</td>
+      <td>0.109280</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>CANDELARIA</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>08</td>
+      <td>08296</td>
+      <td>ATLANTICO</td>
+      <td>0.116874</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>GALAPA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 </section>
 <section id="nivel-manzana">
 <h2><strong>Nivel: Manzana</strong><a class="headerlink" href="#nivel-manzana" title="Link to this heading">#</a></h2>
+<section id="data-censo-nacional-de-poblacion-y-vivienda-2018">
+<h3><strong>Data Censo Nacional de Población y Vivienda 2018</strong><a class="headerlink" href="#data-censo-nacional-de-poblacion-y-vivienda-2018" title="Link to this heading">#</a></h3>
+<p><strong>Descripción:</strong> El Censo Nacional de Población y Vivienda (CNPV) 2018 es la operación estadística decenal más amplia de Colombia. Cada diez años, un equipo recorre puerta a puerta todas las viviendas del territorio continental e insular para registrar datos básicos de hogares y personas a nivel de manzana. Sus resultados nutren el sistema nacional de información estadística y orientan la planificación de políticas públicas en salud, educación, infraestructura y desarrollo regional.</p>
+<p><em><strong>Observación:</strong></em> Las preguntas del censo se clasifican en cuatro grandes grupos de variables, cada uno disponible como un archivo independiente dentro de la carpeta de cada departamento:</p>
+<ul class="simple">
+<li><p><strong>Viviendas:</strong> detalles sobre las características físicas de la construcción, como materiales, servicios básicos, antigüedad y uso del suelo.</p></li>
+<li><p><strong>Personas:</strong> información sociodemográfica de los residentes, incluyendo edad, sexo, nivel educativo y ocupación.</p></li>
+<li><p><strong>Hogares:</strong> datos sobre la composición familiar, número de integrantes, relaciones entre ellos, ingresos y condiciones socioeconómicas.</p></li>
+<li><p><strong>Georreferenciación:</strong> coordenadas precisas y datos de ubicación de cada vivienda para análisis espacial y mapeo.</p></li>
+</ul>
+<p><strong><em>Nota</em>:</strong>
+Debido al gran volumen de archivos, la data no está alojada en la nube y se trabaja desde un repositorio local. En este caso, sólo se han organizado los conjuntos de datos correspondientes a los departamentos de la Región Caribe. En este caso, el conjunto de datos corresponde solo a observaciones tomadas en 2018.</p>
+<p><strong>Fuentes:</strong></p>
+<ul class="simple">
+<li><p>Pagina oficial: <span id="id8">[<a class="reference internal" href="#id18" title="Dirección de Censos y Demografía (DCD) and Departamento Administrativo Nacional de Estadística (DANE). Censo Nacional de Población y Vivienda – CNPV – 2018. https://microdatos.dane.gov.co/index.php/catalog/643, February 2023. Accessed: 2025-05-28.">4</a>]</span></p></li>
+<li><p>Datos: <span id="id9">[<a class="reference internal" href="#id19" title="Departamento Administrativo Nacional de Estadística (DANE). Censo Nacional de Población y Vivienda 2018. https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018, 2018. Accessed: 2025-05-28.">2</a>]</span></p></li>
+</ul>
+<p><strong>Diccionario de variables:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_censo</span> <span class="o">=</span> <span class="n">data_cleaned_censo</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\CCOSTA397\OneDrive\Desktop\CIDEACC\convocatoria38\raw_data\data_dane&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">data_processed_censo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d4d4b00ec6b316e2310d6803fb3d8aa9877a591e10abde3e86fbac2e498f39cf.png" src="_images/d4d4b00ec6b316e2310d6803fb3d8aa9877a591e10abde3e86fbac2e498f39cf.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_censo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>DEPARTAMENTO</th>
+      <th>COD_MUNI</th>
+      <th>MUNICIPIO</th>
+      <th>COD_MANZANA</th>
+      <th>ALFABETA</th>
+      <th>ASISTENCIA_ESCOLAR</th>
+      <th>NIVEL_EDUCATIVO</th>
+      <th>ULTIMOS_PROBLEMAS_SALUD</th>
+      <th>CALIDAD_SERVICIO_SALUD</th>
+      <th>...</th>
+      <th>AGUA_COCINA</th>
+      <th>LUGAR_COCINA</th>
+      <th>TERR_ETNICA</th>
+      <th>TIPO_TERR_ETNICA</th>
+      <th>VIVIENDA_AREA_PROTEGIDA</th>
+      <th>COD_VIV_AREA_PROTEGIDA</th>
+      <th>RECONOCIMIENTO_ETNICO</th>
+      <th>COD_ETNIA</th>
+      <th>HABLA_LENGUA_NATIVA</th>
+      <th>ENTIENDE_LENGUA_NATIVA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08001</td>
+      <td>BARRANQUILLA</td>
+      <td>0800110000000011070301</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08001</td>
+      <td>BARRANQUILLA</td>
+      <td>0800110000000011070302</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08001</td>
+      <td>BARRANQUILLA</td>
+      <td>0800110000000011070301</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08001</td>
+      <td>BARRANQUILLA</td>
+      <td>0800110000000011070301</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08001</td>
+      <td>BARRANQUILLA</td>
+      <td>0800110000000004020101</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p>
+</div></div></div>
+</div>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="referencias">
 <h1><strong>Referencias</strong><a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
-<div class="docutils container" id="id6">
+<div class="docutils container" id="id10">
 <div role="list" class="citation-list">
-<div class="citation" id="id11" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
+<div class="citation" id="id15" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">1</a><span class="fn-bracket">]</span></span>
 <p>Datos Abiertos Colombia. Homicidio. 2025. Conjunto de datos abierto sobre homicidios en Colombia. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data">https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data</a>.</p>
 </div>
-<div class="citation" id="id8" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<div class="citation" id="id19" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">2</a><span class="fn-bracket">]</span></span>
+<p>Departamento Administrativo Nacional de Estadística (DANE). Censo Nacional de Población y Vivienda 2018. <a class="reference external" href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018">https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018</a>, 2018. Accessed: 2025-05-28.</p>
+</div>
+<div class="citation" id="id20" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">3</a><span class="fn-bracket">]</span></span>
+<p>Departamento Administrativo Nacional de Estadística (DANE). Cuentas nacionales departamentales: PIB por departamento. <a class="reference external" href="https://www.dane.gov.co/index.php/estadisticas-por-tema/cuentas-nacionales/cuentas-nacionales-departamentales">https://www.dane.gov.co/index.php/estadisticas-por-tema/cuentas-nacionales/cuentas-nacionales-departamentales</a>, 2025. Información actualizada el 28 de marzo de 2025. Consultado el 28 de mayo de 2025.</p>
+</div>
+<div class="citation" id="id18" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">4</a><span class="fn-bracket">]</span></span>
+<p>Dirección de Censos y Demografía (DCD) and Departamento Administrativo Nacional de Estadística (DANE). Censo Nacional de Población y Vivienda – CNPV – 2018. <a class="reference external" href="https://microdatos.dane.gov.co/index.php/catalog/643">https://microdatos.dane.gov.co/index.php/catalog/643</a>, February 2023. Accessed: 2025-05-28.</p>
+</div>
+<div class="citation" id="id12" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">5</a><span class="fn-bracket">]</span></span>
 <p>Gobierno de Colombia. Calidad del agua para consumo humano en colombia. Datos abiertos (datos.gov.co), 2025. Accedido el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data">https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data</a>.</p>
 </div>
-<div class="citation" id="id7" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">3</a><span class="fn-bracket">]</span></span>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">6</a><span class="fn-bracket">]</span></span>
 <p>Instituto Nacional de Salud de Colombia. Sivicap. 2025. Página oficial. URL: <a class="reference external" href="https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx">https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx</a>.</p>
 </div>
-<div class="citation" id="id9" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">4</a><span class="fn-bracket">]</span></span>
+<div class="citation" id="id13" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">7</a><span class="fn-bracket">]</span></span>
 <p>Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://colombiatic.mintic.gov.co/679/w3-channel.html">https://colombiatic.mintic.gov.co/679/w3-channel.html</a>.</p>
 </div>
-<div class="citation" id="id10" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">5</a><span class="fn-bracket">]</span></span>
+<div class="citation" id="id14" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">8</a><span class="fn-bracket">]</span></span>
 <p>Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8">https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8</a>.</p>
+</div>
+<div class="citation" id="id17" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">9</a><span class="fn-bracket">]</span></span>
+<p>Unidad para la Atención y Reparación Integral a las Víctimas. Índice de Riesgo de Victimización. Sitio web, 2025. Consultado el 24 de mayo de 2025. URL: <a class="reference external" href="https://datospaz.unidadvictimas.gov.co/indice-de-riesgo-de-victimizacion/">https://datospaz.unidadvictimas.gov.co/indice-de-riesgo-de-victimizacion/</a>.</p>
 </div>
 </div>
 </div>
@@ -911,14 +1361,21 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicaciones-para-el-analisis-y-limpieza-de-cada-conjunto-de-datos"><strong>Indicaciones para el análisis y limpieza de cada conjunto de datos</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-departamental"><strong>Nivel: Departamental</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data: Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-departamental"><strong>Nivel: Departamental</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-pib-producto-interno-bruto"><strong>Data PIB (Producto Interno Bruto)</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-censo-nacional-de-poblacion-y-vivienda-2018"><strong>Data Censo Nacional de Población y Vivienda 2018</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias"><strong>Referencias</strong></a></li>

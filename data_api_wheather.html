@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Prueba de uso Open-Meteo Historical Weather API &#8212; Convocatoria 38.</title>
+    <title>Recolección de datos climaticos y de calidad del aire: &#8212; Convocatoria 38.</title>
   
   
   
@@ -148,14 +148,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo_cideacc.png" class="logo__image only-light" alt="Convocatoria 38. - Home"/>
-    <script>document.write(`<img src="_static/logo_cideacc.png" class="logo__image only-dark" alt="Convocatoria 38. - Home"/>`);</script>
   
+    <p class="title logo__title">Convocatoria 38.</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -185,13 +179,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios de variables</strong></a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="diccionarios_update.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
@@ -378,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Prueba de uso Open-Meteo Historical Weather API</h1>
+    <h1>Recolección de datos climaticos y de calidad del aire:</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,10 +376,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Prueba de uso <em>Open-Meteo Historical Weather API</em></strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-uso-open-meteo-air-quality-api"><strong>Prueba de uso <em>Open-Meteo Air Quality API</em></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias"><strong>Librerias</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos-centros-poblados"><strong>Limpieza de datos: Centros poblados</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-para-la-union-de-los-dataframes"><strong>Limpieza para la union de los dataframes</strong></a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -402,126 +390,139 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="prueba-de-uso-open-meteo-historical-weather-api">
-<h1><strong>Prueba de uso <em>Open-Meteo Historical Weather API</em></strong><a class="headerlink" href="#prueba-de-uso-open-meteo-historical-weather-api" title="Link to this heading">#</a></h1>
-<p>Variables disponibles en Open-Meteo Historical Weather API:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="recoleccion-de-datos-climaticos-y-de-calidad-del-aire">
+<h1><strong>Recolección de datos climaticos y de calidad del aire:</strong><a class="headerlink" href="#recoleccion-de-datos-climaticos-y-de-calidad-del-aire" title="Link to this heading">#</a></h1>
+<p><strong><em>Open-Meteo Historical Weather API</em> &amp; <em>Open-Meteo Air Quality API</em></strong></p>
+<p>Variables que se incluyeron:</p>
+<p><strong>Variables climáticas</strong></p>
 <ol class="arabic simple">
-<li><p>Temperaturas:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">temperature_2m_min</span></code>: Temperatura mínima a 2 metros.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">temperature_2m_max</span></code>: Temperatura máxima a 2 metros.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">temperature_2m_mean</span></code>: Temperatura media a 2 metros (promedio entre mínima y máxima).</p></li>
-</ul>
-</li>
-<li><p>Precipitación:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">precipitation_sum</span></code>: Precipitación total en el día (en milímetros).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">precipitation_hours</span></code>: Horas de lluvia en el día.</p></li>
-</ul>
-</li>
-<li><p>Humedad:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">humidity_2m_mean</span></code>: Humedad relativa media a 2 metros.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">humidity_2m_max</span></code>: Humedad máxima a 2 metros.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">humidity_2m_min</span></code>: Humedad mínima a 2 metros.</p></li>
-</ul>
-</li>
-<li><p>Viento:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">windspeed_10m_max</span></code>: Velocidad máxima del viento a 10 metros.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">windspeed_10m_mean</span></code>: Velocidad media del viento a 10 metros.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">windgusts_10m_max</span></code>: Ráfagas máximas del viento a 10 metros.</p></li>
-</ul>
-</li>
-<li><p>Radiación solar:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">radiation_sum</span></code>: Radiación solar total en el día (en MJ/m²).</p></li>
-</ul>
-</li>
-<li><p>Cobertura de nubes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cloudcover_mean</span></code>: Promedio de la cobertura de nubes (en porcentaje).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cloudcover_max</span></code>: Cobertura máxima de nubes (en porcentaje).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cloudcover_min</span></code>: Cobertura mínima de nubes (en porcentaje).</p></li>
-</ul>
-</li>
-<li><p>Otros:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pressure_mean</span></code>: Presión atmosférica media.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">weathercode</span></code>: Código del tipo de tiempo (despejado, lluvioso, etc.).</p></li>
-</ul>
-</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">temperature_2m_max</span></code></strong>: Temperatura máxima a 2 metros sobre el nivel del suelo (°C).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">precipitation_sum</span></code></strong>: Precipitación total acumulada durante el día (mm).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">windgusts_10m_max</span></code></strong>: Velocidad máxima de las ráfagas de viento a 10 metros de altura (m/s).</p></li>
 </ol>
-<p>params = {
-“start_date”: “2018-01-01”,
-“end_date”: “2018-12-31”,
-“daily”: “temperature_2m_max,precipitation_sum,humidity_2m_mean”,
-“timezone”: “America/Bogota”
-}</p>
-<p>TEMPERATURA, HUMEDAD Y VIENTO</p>
-<p>Open-Meteo Historical Weather API</p>
-<p><a class="reference external" href="https://open-meteo.com/en/docs/historical-weather-api">https://open-meteo.com/en/docs/historical-weather-api</a></p>
+<p><strong>Variables de calidad del aire</strong></p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pm10</span></code></strong>: Concentración horaria de partículas inhalables con diámetro ≤ 10 µm (µg/m³).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pm2_5</span></code></strong>: Concentración horaria de partículas finas con diámetro ≤ 2.5 µm (µg/m³).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ozone</span></code></strong>: Concentración horaria de ozono troposférico (O₃) (µg/m³).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">carbon_monoxide</span></code></strong>: Concentración horaria de monóxido de carbono (CO) (mg/m³).</p></li>
+</ol>
+<p>Open-Meteo Historical Weather API <a class="reference external" href="https://open-meteo.com/en/docs/historical-weather-api">https://open-meteo.com/en/docs/historical-weather-api</a></p>
+<p>Open-Meteo Air Quality API <a class="reference external" href="https://open-meteo.com/en/docs/air-quality-api?hourly=pm10,pm2_5,carbon_dioxide,ozone">https://open-meteo.com/en/docs/air-quality-api?hourly=pm10,pm2_5,carbon_dioxide,ozone</a></p>
+<section id="librerias">
+<h2><strong>Librerias</strong><a class="headerlink" href="#librerias" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unidecode</span><span class="w"> </span><span class="kn">import</span> <span class="n">unidecode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones.rename_nivel</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="limpieza-de-datos-centros-poblados">
+<h2><strong>Limpieza de datos: Centros poblados</strong><a class="headerlink" href="#limpieza-de-datos-centros-poblados" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centro_atlantico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_atlanticos.csv&#39;</span><span class="p">)</span>
+<span class="n">centro_magdalena</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_magdalena.csv&#39;</span><span class="p">)</span>
+<span class="n">centro_cesar</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_cesar.csv&#39;</span><span class="p">)</span>
+<span class="n">centro_guajira</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_laguajira.csv&#39;</span><span class="p">)</span>
+<span class="n">centro_sucre</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_sucre.csv&#39;</span><span class="p">)</span>
+<span class="n">cento_sai</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_sanandres.csv&#39;</span><span class="p">)</span>
+<span class="n">centro_cordoba</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_cordoba.csv&#39;</span><span class="p">)</span>
+<span class="n">centro_bolivar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_centros_poblados/raw/centros_bolivar.csv&#39;</span><span class="p">)</span>
+
+<span class="n">centros</span> <span class="o">=</span><span class="p">[</span><span class="n">centro_atlantico</span><span class="p">,</span> <span class="n">centro_magdalena</span><span class="p">,</span> <span class="n">centro_cesar</span><span class="p">,</span> <span class="n">centro_guajira</span><span class="p">,</span> <span class="n">centro_sucre</span><span class="p">,</span> <span class="n">cento_sai</span><span class="p">,</span> <span class="n">centro_cordoba</span><span class="p">,</span> <span class="n">centro_bolivar</span><span class="p">]</span>
+
+<span class="n">var</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Código Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Código Municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;Código Centro Poblado&#39;</span><span class="p">,</span><span class="s1">&#39;Nombre Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre Municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;Nombre Centro Poblado&#39;</span><span class="p">,</span><span class="s1">&#39;Tipo Centro Poblado&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitud&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitud&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Coordenadas de las capitales de la región Caribe</span>
-<span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Barranquilla&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.9878</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.7889</span><span class="p">},</span>
-    <span class="s1">&#39;Cartagena&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.3910</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.4794</span><span class="p">},</span>
-    <span class="s1">&#39;Valledupar&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.4639</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.2505</span><span class="p">},</span>
-    <span class="s1">&#39;Riohacha&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">11.5441</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">72.9074</span><span class="p">},</span>
-    <span class="s1">&#39;Santa Marta&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">11.2408</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.1990</span><span class="p">},</span>
-    <span class="s1">&#39;San Andrés&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">12.5840</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">81.7117</span><span class="p">},</span>
-    <span class="s1">&#39;Sincelejo&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">9.3037</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.3972</span><span class="p">},</span>
-    <span class="s1">&#39;Montería&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">8.7491</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.8813</span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1"># Parámetros comunes para la API</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://archive-api.open-meteo.com/v1/archive&quot;</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-01-01&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-12-31&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;daily&quot;</span><span class="p">:</span> <span class="s2">&quot;temperature_2m_max&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America/Bogota&quot;</span>
-<span class="p">}</span>
-
-<span class="c1"># Diccionario para almacenar los resultados</span>
-<span class="n">resultados</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="c1"># Peticiones a la API para cada capital</span>
-<span class="k">for</span> <span class="n">ciudad</span><span class="p">,</span> <span class="n">coords</span> <span class="ow">in</span> <span class="n">capitales</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">params</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
-    <span class="n">params</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
-    
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-    
-    <span class="c1"># Convertir los datos a DataFrame y calcular el promedio mensual</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-        <span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;daily&#39;</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;temp_max&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;daily&#39;</span><span class="p">][</span><span class="s1">&#39;temperature_2m_max&#39;</span><span class="p">]</span>
-    <span class="p">})</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">])</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;fecha&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">mensual_max</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;ME&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-    
-    <span class="c1"># Guardar los resultados</span>
-    <span class="n">resultados</span><span class="p">[</span><span class="n">ciudad</span><span class="p">]</span> <span class="o">=</span> <span class="n">mensual_max</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ce</span> <span class="ow">in</span> <span class="n">centros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ce</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(85, 12)
+(312, 12)
+(229, 12)
+(189, 12)
+(378, 12)
+(11, 12)
+(588, 12)
+(490, 12)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultados</span><span class="p">[</span><span class="s1">&#39;Barranquilla&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_filas</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">centro</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">centro</span> <span class="ow">in</span> <span class="n">centros</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total_filas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2282
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centros_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">centro</span> <span class="ow">in</span> <span class="n">centros</span><span class="p">:</span>
+    <span class="c1"># Filtrar columnas deseadas</span>
+    <span class="n">centro</span> <span class="o">=</span> <span class="n">centro</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+
+    <span class="c1"># Limpiar nombres</span>
+    <span class="n">centro</span><span class="p">[</span><span class="s1">&#39;Nombre Departamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">centro</span><span class="p">[</span><span class="s1">&#39;Nombre Departamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">unidecode</span><span class="p">)</span>
+    <span class="n">centro</span><span class="p">[</span><span class="s1">&#39;Nombre Municipio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">centro</span><span class="p">[</span><span class="s1">&#39;Nombre Municipio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">unidecode</span><span class="p">)</span>
+    <span class="n">centro</span><span class="p">[</span><span class="s1">&#39;Nombre Centro Poblado&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">centro</span><span class="p">[</span><span class="s1">&#39;Nombre Centro Poblado&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">unidecode</span><span class="p">)</span>
+
+    <span class="n">centro</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span> <span class="s1">&#39;Código Departamento&#39;</span> <span class="p">:</span> <span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Código Municipio&#39;</span> <span class="p">:</span> <span class="s1">&#39;COD_MUNI&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Código Centro Poblado&#39;</span> <span class="p">:</span> <span class="s1">&#39;COD_CE_POBLADO&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;Nombre Departamento&#39;</span> <span class="p">:</span> <span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Nombre Municipio&#39;</span> <span class="p">:</span> <span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Nombre Centro Poblado&#39;</span> <span class="p">:</span> <span class="s1">&#39;CENTRO_POBLADO&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Tipo Centro Poblado&#39;</span> <span class="p">:</span> <span class="s1">&#39;TIPO_CE_POBLADO&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Longitud&#39;</span> <span class="p">:</span> <span class="s1">&#39;LONGITUD&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Latitud&#39;</span> <span class="p">:</span> <span class="s1">&#39;LATITUD&#39;</span>
+                       <span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">centro</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;ARCHIPIELAGO DE SAN ANDRES, PROVIDENCIA Y SANTA CATALINA&#39;</span><span class="p">:</span> <span class="s1">&#39;SAN ANDRES&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">nombre_dpto</span> <span class="o">=</span> <span class="n">unidecode</span><span class="p">(</span><span class="n">centro</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Guardar en el diccionario</span>
+    <span class="n">centros_dict</span><span class="p">[</span><span class="n">nombre_dpto</span><span class="p">]</span> <span class="o">=</span> <span class="n">centro</span>
+    <span class="n">centro</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;data_centros_poblados/clean/centros_</span><span class="si">{</span><span class="n">nombre_dpto</span><span class="si">}</span><span class="s1">_clean.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centros_dict</span><span class="p">[</span><span class="s1">&#39;cesar&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -544,140 +545,508 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>temp_max</th>
-    </tr>
-    <tr>
-      <th>fecha</th>
-      <th></th>
+      <th>COD_DEPTO</th>
+      <th>COD_MUNI</th>
+      <th>COD_CE_POBLADO</th>
+      <th>DEPARTAMENTO</th>
+      <th>MUNICIPIO</th>
+      <th>CENTRO_POBLADO</th>
+      <th>TIPO_CE_POBLADO</th>
+      <th>LONGITUD</th>
+      <th>LATITUD</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2018-01-31</th>
-      <td>29.622581</td>
+      <th>0</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001000</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>VALLEDUPAR</td>
+      <td>CABECERA MUNICIPAL</td>
+      <td>-73.259398</td>
+      <td>10.460472</td>
     </tr>
     <tr>
-      <th>2018-02-28</th>
-      <td>28.935714</td>
+      <th>1</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001001</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>AGUAS BLANCAS</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.487157</td>
+      <td>10.225763</td>
     </tr>
     <tr>
-      <th>2018-03-31</th>
-      <td>29.783871</td>
+      <th>2</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001002</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>ATANQUEZ</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.353992</td>
+      <td>10.696908</td>
     </tr>
     <tr>
-      <th>2018-04-30</th>
-      <td>30.570000</td>
+      <th>3</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001003</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>BADILLO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.128231</td>
+      <td>10.630880</td>
     </tr>
     <tr>
-      <th>2018-05-31</th>
-      <td>30.016129</td>
+      <th>4</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001005</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>CARACOLI</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.736000</td>
+      <td>10.078711</td>
     </tr>
     <tr>
-      <th>2018-06-30</th>
-      <td>30.500000</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>2018-07-31</th>
-      <td>30.361290</td>
+      <th>224</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787014</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>MUNDO ALREVEZ</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.736723</td>
+      <td>8.779009</td>
     </tr>
     <tr>
-      <th>2018-08-31</th>
-      <td>30.745161</td>
+      <th>225</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787015</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>EL DOCE</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.859862</td>
+      <td>8.891108</td>
     </tr>
     <tr>
-      <th>2018-09-30</th>
-      <td>30.606667</td>
+      <th>226</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787016</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>SITIO NUEVO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.756935</td>
+      <td>8.810860</td>
     </tr>
     <tr>
-      <th>2018-10-31</th>
-      <td>29.903226</td>
+      <th>227</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787017</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>TOTUMITO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.738152</td>
+      <td>8.931471</td>
     </tr>
     <tr>
-      <th>2018-11-30</th>
-      <td>29.933333</td>
-    </tr>
-    <tr>
-      <th>2018-12-31</th>
-      <td>29.677419</td>
+      <th>228</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787018</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>MATA DE BARRO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.694509</td>
+      <td>9.017064</td>
     </tr>
   </tbody>
 </table>
+<p>229 rows × 9 columns</p>
 </div></div></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="prueba-de-uso-open-meteo-air-quality-api">
-<h1><strong>Prueba de uso <em>Open-Meteo Air Quality API</em></strong><a class="headerlink" href="#prueba-de-uso-open-meteo-air-quality-api" title="Link to this heading">#</a></h1>
+<section id="limpieza-para-la-union-de-los-dataframes">
+<h2><strong>Limpieza para la union de los dataframes</strong><a class="headerlink" href="#limpieza-para-la-union-de-los-dataframes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Si también quieres el total final:</span>
+<span class="n">df_resultado</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;data_processed/climate/</span><span class="si">{</span><span class="n">archivo</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;data_processed/climate&#39;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;data_processed/climate&#39;</span>
 
-<span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Barranquilla&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.9878</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.7889</span><span class="p">},</span>
-    <span class="s1">&#39;Cartagena&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.3910</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.4794</span><span class="p">},</span>
-    <span class="s1">&#39;Valledupar&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">10.4639</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">73.2505</span><span class="p">},</span>
-    <span class="s1">&#39;Riohacha&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">11.5441</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">72.9074</span><span class="p">},</span>
-    <span class="s1">&#39;Santa Marta&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">11.2408</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.1990</span><span class="p">},</span>
-    <span class="s1">&#39;San Andrés&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">12.5840</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">81.7117</span><span class="p">},</span>
-    <span class="s1">&#39;Sincelejo&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">9.3037</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.3972</span><span class="p">},</span>
-    <span class="s1">&#39;Montería&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">8.7491</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">75.8813</span><span class="p">}</span>
-<span class="p">}</span>
+<span class="c1"># Opción recomendada: guardarlos en un diccionario</span>
+<span class="n">dataframes</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://air-quality-api.open-meteo.com/v1/air-quality&quot;</span>
-
-<span class="n">params_base</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2023-01-02&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-02&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;daily&quot;</span><span class="p">:</span> <span class="s2">&quot;pm10&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America/Bogota&quot;</span>
-<span class="p">}</span>
-
-<span class="n">resultados</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="k">for</span> <span class="n">ciudad</span><span class="p">,</span> <span class="n">coords</span> <span class="ow">in</span> <span class="n">capitales</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="n">params_base</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">params</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
-    <span class="n">params</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
-    
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-        <span class="n">pm10_values</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;daily&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pm10&quot;</span><span class="p">,</span> <span class="p">[])</span>
-        <span class="n">fechas</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;daily&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="p">[])</span>
-        
-        <span class="k">if</span> <span class="n">pm10_values</span> <span class="ow">and</span> <span class="n">fechas</span><span class="p">:</span>
-            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-                <span class="s1">&#39;fecha&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">fechas</span><span class="p">),</span>
-                <span class="s1">&#39;pm10&#39;</span><span class="p">:</span> <span class="n">pm10_values</span>
-            <span class="p">})</span>
-            <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;fecha&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-            <span class="n">mensual_pm10</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-            <span class="n">resultados</span><span class="p">[</span><span class="n">ciudad</span><span class="p">]</span> <span class="o">=</span> <span class="n">mensual_pm10</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No hay datos para </span><span class="si">{</span><span class="n">ciudad</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error en la consulta para </span><span class="si">{</span><span class="n">ciudad</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Mostrar promedio mensual PM10 en Barranquilla</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">resultados</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Barranquilla&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">archivo</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">archivo</span><span class="p">))</span>
+    <span class="n">dataframes</span><span class="p">[</span><span class="n">nombre</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">dataframes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No hay datos para Barranquilla
-No hay datos para Cartagena
-No hay datos para Valledupar
-No hay datos para Riohacha
-No hay datos para Santa Marta
-No hay datos para San Andrés
-No hay datos para Sincelejo
-No hay datos para Montería
-None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data_climate_atlantico: (85, 12)
+data_climate_cesar: (225, 12)
+data_climate_la_guajira: (160, 12)
+data_climate_magdalena: (308, 12)
+data_climate_san_andres: (11, 12)
+data_climate_sucre: (374, 12)
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">centros_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>atlantico: (85, 9)
+magdalena: (312, 9)
+cesar: (229, 9)
+la_guajira: (189, 9)
+sucre: (378, 9)
+san_andres: (11, 9)
+cordoba: (588, 9)
+bolivar: (490, 9)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Normalizamos las claves de los CSV procesados quitando el prefijo:</span>
+<span class="n">proc</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">nombre</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;data_climate_&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span> <span class="n">df</span>
+    <span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">dataframes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1"># 2) Usamos directamente tu dict original de centros:</span>
+<span class="n">orig</span> <span class="o">=</span> <span class="n">centros_dict</span>
+
+<span class="c1"># 3) Encontramos los comunes y los que faltan en cada uno</span>
+<span class="n">comunes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">orig</span><span class="p">)</span>
+<span class="n">solo_proc</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">orig</span><span class="p">)</span>
+<span class="n">solo_orig</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">orig</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Departamentos presentes en ambos:&quot;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">comunes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sólo en procesados:        &quot;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">solo_proc</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sólo en originales:        &quot;</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">solo_orig</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Departamentos presentes en ambos: [&#39;atlantico&#39;, &#39;cesar&#39;, &#39;la_guajira&#39;, &#39;magdalena&#39;, &#39;san_andres&#39;, &#39;sucre&#39;]
+Sólo en procesados:         []
+Sólo en originales:         [&#39;bolivar&#39;, &#39;cordoba&#39;] 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">depto</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">comunes</span><span class="p">):</span>
+    <span class="n">cod_orig</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">orig</span><span class="p">[</span><span class="n">depto</span><span class="p">][</span><span class="s1">&#39;COD_CE_POBLADO&#39;</span><span class="p">])</span>
+    <span class="n">cod_proc</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">proc</span><span class="p">[</span><span class="n">depto</span><span class="p">][</span><span class="s1">&#39;COD_CE_POBLADO&#39;</span><span class="p">])</span>
+    <span class="n">faltantes</span> <span class="o">=</span> <span class="n">cod_orig</span> <span class="o">-</span> <span class="n">cod_proc</span>
+    <span class="k">if</span> <span class="n">faltantes</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">depto</span><span class="si">}</span><span class="s2"> → faltan </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">faltantes</span><span class="p">)</span><span class="si">}</span><span class="s2"> códigos:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">faltantes</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> cesar → faltan 4 códigos:
+[20001052, 20001053, 20001054, 20570006]
+
+ la_guajira → faltan 29 códigos:
+[44001045, 44001046, 44001047, 44078017, 44078018, 44078019, 44378013, 44430021, 44430022, 44430023, 44430024, 44430025, 44430026, 44430027, 44430028, 44430029, 44560014, 44560015, 44560016, 44560017, 44847039, 44847040, 44847041, 44847042, 44847043, 44847044, 44847045, 44847046, 44847047]
+
+ magdalena → faltan 4 códigos:
+[47001046, 47189027, 47189028, 47660016]
+
+ sucre → faltan 4 códigos:
+[70001029, 70523019, 70523021, 70670025]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">depto</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">comunes</span><span class="p">):</span>
+    <span class="n">df_o</span> <span class="o">=</span> <span class="n">orig</span><span class="p">[</span><span class="n">depto</span><span class="p">]</span>
+    <span class="n">df_p</span> <span class="o">=</span> <span class="n">proc</span><span class="p">[</span><span class="n">depto</span><span class="p">]</span>
+    <span class="n">nuevas</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_p</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_o</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+    <span class="n">df_m</span> <span class="o">=</span> <span class="n">df_o</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">df_p</span><span class="p">[[</span><span class="s1">&#39;COD_CE_POBLADO&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">nuevas</span><span class="p">],</span>
+        <span class="n">on</span><span class="o">=</span><span class="s1">&#39;COD_CE_POBLADO&#39;</span><span class="p">,</span>
+        <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">merged</span><span class="p">[</span><span class="n">depto</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_m</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="s1">&#39;cesar&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>COD_MUNI</th>
+      <th>COD_CE_POBLADO</th>
+      <th>DEPARTAMENTO</th>
+      <th>MUNICIPIO</th>
+      <th>CENTRO_POBLADO</th>
+      <th>TIPO_CE_POBLADO</th>
+      <th>LONGITUD</th>
+      <th>LATITUD</th>
+      <th>temp_max_2023</th>
+      <th>precipitacion_2023</th>
+      <th>viento_max_2023</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001000</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>VALLEDUPAR</td>
+      <td>CABECERA MUNICIPAL</td>
+      <td>-73.259398</td>
+      <td>10.460472</td>
+      <td>33.894795</td>
+      <td>2.719452</td>
+      <td>7.877808</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001001</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>AGUAS BLANCAS</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.487157</td>
+      <td>10.225763</td>
+      <td>35.716986</td>
+      <td>2.856438</td>
+      <td>8.415890</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001002</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>ATANQUEZ</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.353992</td>
+      <td>10.696908</td>
+      <td>27.853699</td>
+      <td>8.373425</td>
+      <td>7.640822</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001003</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>BADILLO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.128231</td>
+      <td>10.630880</td>
+      <td>33.340000</td>
+      <td>4.310137</td>
+      <td>8.578630</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20</td>
+      <td>20001</td>
+      <td>20001005</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>CARACOLI</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.736000</td>
+      <td>10.078711</td>
+      <td>36.353973</td>
+      <td>3.185479</td>
+      <td>9.176712</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>224</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787014</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>MUNDO ALREVEZ</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.736723</td>
+      <td>8.779009</td>
+      <td>32.638356</td>
+      <td>10.060000</td>
+      <td>7.943836</td>
+    </tr>
+    <tr>
+      <th>225</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787015</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>EL DOCE</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.859862</td>
+      <td>8.891108</td>
+      <td>32.646575</td>
+      <td>9.301096</td>
+      <td>7.590685</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787016</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>SITIO NUEVO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.756935</td>
+      <td>8.810860</td>
+      <td>32.738356</td>
+      <td>10.060000</td>
+      <td>7.943836</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787017</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>TOTUMITO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.738152</td>
+      <td>8.931471</td>
+      <td>32.546575</td>
+      <td>9.301096</td>
+      <td>7.590685</td>
+    </tr>
+    <tr>
+      <th>228</th>
+      <td>20</td>
+      <td>20787</td>
+      <td>20787018</td>
+      <td>CESAR</td>
+      <td>TAMALAMEQUE</td>
+      <td>MATA DE BARRO</td>
+      <td>CENTRO POBLADO</td>
+      <td>-73.694509</td>
+      <td>9.017064</td>
+      <td>32.499726</td>
+      <td>9.301096</td>
+      <td>7.590685</td>
+    </tr>
+  </tbody>
+</table>
+<p>229 rows × 12 columns</p>
+</div></div></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -726,10 +1095,10 @@ None
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Prueba de uso <em>Open-Meteo Historical Weather API</em></strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba-de-uso-open-meteo-air-quality-api"><strong>Prueba de uso <em>Open-Meteo Air Quality API</em></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias"><strong>Librerias</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos-centros-poblados"><strong>Limpieza de datos: Centros poblados</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-para-la-union-de-los-dataframes"><strong>Limpieza para la union de los dataframes</strong></a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
