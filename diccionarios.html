@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Diccionarios de variables &#8212; Convocatoria 38.</title>
+    <title>Diccionarios: Identificación de variables &#8212; Convocatoria 38.</title>
   
   
   
@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'diccionarios';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Municipios Región Caribe" href="nombres_municipios_region_caribe.html" />
+    <link rel="prev" title="Georeferenciación manzanas" href="manzanas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -173,13 +173,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="reglas.html"><strong>Reglas de Trabajo</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="raw_to_processed.html"><strong>Raw to Processed</strong></a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="diccionarios_update.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Diccionarios: Identificación de variables</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
@@ -366,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Diccionarios de variables</h1>
+    <h1>Diccionarios: Identificación de variables</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,13 +375,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Diccionarios de variables</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida"><strong>Encuesta Nacional de Calidad de Vida</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-de-cultura-politica"><strong>Encuesta de cultura política</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pib"><strong>PIB</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#georeferenciacion-de-las-manzanas"><strong>Georeferenciación de las manzanas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general"><strong>General</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-departamental"><strong>Nivel: Departamental</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-pib-producto-interno-bruto"><strong>Data PIB (Producto Interno Bruto)</strong></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano"><strong>Data Calidad del Agua para Consumo Humano</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida-2023"><strong>Encuesta Nacional de Calidad de vida 2023</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-censo-nacional-de-poblacion-y-vivienda-2018"><strong>Data Censo Nacional de Población y Vivienda 2018</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#georeferenciacion-de-las-manzanas"><strong>Georeferenciación de las manzanas</strong></a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -393,11 +404,263 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="diccionarios-de-variables">
-<h1><strong>Diccionarios de variables</strong><a class="headerlink" href="#diccionarios-de-variables" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="diccionarios-identificacion-de-variables">
+<h1><strong>Diccionarios: Identificación de variables</strong><a class="headerlink" href="#diccionarios-identificacion-de-variables" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Grupo</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+<th class="head"><p><strong>Ejemplos de variables</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>General</strong></p></td>
+<td><p>Información de identificación, ubicación y temporalidad de cada registro.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">COD_DEPTO</span></code>, <code class="docutils literal notranslate"><span class="pre">COD_MUNI</span></code>, <code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code>, <code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code>, <code class="docutils literal notranslate"><span class="pre">AÑO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vulnerabilidad Económica (VE)</strong></p></td>
+<td><p>Mide la capacidad financiera de la población para acceder a recursos y servicios básicos de salud; bajos ingresos o desempleo elevado incrementan la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TASA_POBREZA</span></code>, <code class="docutils literal notranslate"><span class="pre">INGRESO_PROMEDIO_HOGAR</span></code>, <code class="docutils literal notranslate"><span class="pre">ESTRATO_SOCIOECONÓMICO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vulnerabilidad Cultural (VC)</strong></p></td>
+<td><p>Evalúa las barreras derivadas de idioma, creencias o falta de adaptación cultural de los servicios de salud; mayor diversidad lingüística o prácticas tradicionales no atendidas aumentan la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">IDIOMA_PRINCIPAL</span></code>, <code class="docutils literal notranslate"><span class="pre">PARTICIPACIÓN_CULTURAL</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vulnerabilidad de Infraestructura (VI)</strong></p></td>
+<td><p>Se refiere a la disponibilidad y calidad de equipamientos sanitarios, saneamiento y transporte hacia centros de salud; deficiencias en estos elementos elevan la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DISTANCIA_HOSPITAL_KM</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCESO_SANEAMIENTO</span></code>, <code class="docutils literal notranslate"><span class="pre">TRANSPORTE_SALUD</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vulnerabilidad de Acceso a Salud (VH)</strong></p></td>
+<td><p>Considera la cobertura, costo y cercanía de los servicios médicos; barreras económicas, geográficas o de calidad en la atención incrementan la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">COBERTURA_SEGURO_SOCIAL</span></code>, <code class="docutils literal notranslate"><span class="pre">COSTO_CONSULTA</span></code>, <code class="docutils literal notranslate"><span class="pre">ÍNDICE_CALIDAD_SERVICIOS</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vulnerabilidad Ambiental (VAM)</strong></p></td>
+<td><p>Mide la exposición a riesgos ambientales —contaminación, desastres naturales o cambios climáticos— que afectan la salud y la integridad del hábitat; mayor exposición empeora la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ÍNDICE_CONTAMINACIÓN</span></code>, <code class="docutils literal notranslate"><span class="pre">FRECUENCIA_DESASTRES_NATURALES</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMPERATURA_EXTREMA</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vulnerabilidad Geográfica (VG)</strong></p></td>
+<td><p>Mide la dificultad de acceso físico a servicios de salud debido a la ubicación en zonas rurales remotas o de difícil acceso; el aislamiento geográfico incrementa la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ES_ZONA_RURAL_REMOTA</span></code>, <code class="docutils literal notranslate"><span class="pre">ALTITUD</span></code>, <code class="docutils literal notranslate"><span class="pre">TIPO_DE_TERRENO</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vulnerabilidad Tecnológica (VT)</strong></p></td>
+<td><p>Refleja el acceso a tecnologías médicas y conectividad digital para consultas y seguimiento; falta de cobertura de internet o servicios de telemedicina eleva la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">COBERTURA_INTERNET</span></code>, <code class="docutils literal notranslate"><span class="pre">USO_TELEMEDICINA</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vulnerabilidad Social (VS)</strong></p></td>
+<td><p>Involucra dinámicas de discriminación, exclusión o violencia que afectan el acceso a recursos y servicios de salud; mayor marginación social aumenta la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TASA_VIOLENCIA</span></code>, <code class="docutils literal notranslate"><span class="pre">ÍNDICE_EXCLUSIÓN_SOCIAL</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vulnerabilidad de Acceso a Información (VA)</strong></p></td>
+<td><p>Se refiere a la disponibilidad y comprensión de la información en salud pública; carencia de materiales adaptados o bajo nivel de alfabetización elevan la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DISPONIBILIDAD_MATERIALES_INFORMATIVOS</span></code>, <code class="docutils literal notranslate"><span class="pre">NIVEL_ALFABETISMO</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vulnerabilidad Política (VP)</strong></p></td>
+<td><p>Evalúa la estabilidad del entorno político y su impacto en la provisión de servicios de salud; conflictos o inestabilidad institucional empeoran la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ÍNDICE_ESTABILIDAD_PÚBLICA</span></code>, <code class="docutils literal notranslate"><span class="pre">NÚMERO_PROTESTAS</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vulnerabilidad por Género y Barreras Sociales (VGBS)</strong></p></td>
+<td><p>Mide cómo las normas de género o barreras sociales limitan el acceso a servicios y recursos de salud; desigualdades de género o roles tradicionales no considerados aumentan la vulnerabilidad.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BRECHA_ACCESO_SALUD_MUJERES</span></code>, <code class="docutils literal notranslate"><span class="pre">BARRERAS_CULTURALES</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="general">
+<h2><strong>General</strong><a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
+<p>Es importante destacar que en todos los conjuntos de datos que se usan y se describen, se incluyen las siguientes variables:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Tipo de variable</strong></p></th>
+<th class="head"><p><strong>Descripción de la variable</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_DEPTO</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Código DANE del departamento (2 dígitos)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Nombre del departamento</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_MUNI</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Código DANE del municipio (5 dígitos, que incluye el código del departamento)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Nombre del municipio</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="encuesta-nacional-de-calidad-de-vida">
-<h1><strong>Encuesta Nacional de Calidad de Vida</strong><a class="headerlink" href="#encuesta-nacional-de-calidad-de-vida" title="Link to this heading">#</a></h1>
+<section id="nivel-departamental">
+<h2><strong>Nivel: Departamental</strong><a class="headerlink" href="#nivel-departamental" title="Link to this heading">#</a></h2>
+<section id="data-pib-producto-interno-bruto">
+<h3><strong>Data PIB (Producto Interno Bruto)</strong><a class="headerlink" href="#data-pib-producto-interno-bruto" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Tipo de variable</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+<th class="head"><p><strong>Categorías/Tipo</strong></p></th>
+<th class="head"><p><strong>Tipo de vulnerabilidad</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PIB</span></code></p></td>
+<td><p>Cuantitativa continua</p></td>
+<td><p>Producto interno bruto departamental a precios corrientes y en miles de millones de pesos.</p></td>
+<td><p>Valor numérico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Económica</span> <span class="pre">(VE)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PARTICIPACION_PORCENTUAL</span></code></p></td>
+<td><p>Cuantitativa continua</p></td>
+<td><p>Participación porcentual de cada departamento en el PIB global de Colombia</p></td>
+<td><p>Valor numérico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Económica</span> <span class="pre">(VE)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="nivel-municipal">
+<h2><strong>Nivel: Municipal</strong><a class="headerlink" href="#nivel-municipal" title="Link to this heading">#</a></h2>
+<section id="data-acceso-a-internet">
+<h3><strong>Data Acceso a Internet</strong><a class="headerlink" href="#data-acceso-a-internet" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Tipo de variable</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+<th class="head"><p><strong>Categorías/Tipo</strong></p></th>
+<th class="head"><p><strong>Tipo de vulnerabilidad</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AÑO</span></code></p></td>
+<td><p>Cuantitativa discreta</p></td>
+<td><p>Año al que corresponde el registro (e.g., 2023).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2015</span> <span class="pre">-</span> <span class="pre">2023</span></code></p></td>
+<td><p>General</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACCESO_INTERNET</span></code></p></td>
+<td><p>Cuantitativa discreta</p></td>
+<td><p>Número de accesos fijos a Internet por cada 100 habitantes en el año y municipio correspondiente.</p></td>
+<td><p>Valor numérico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">tecnológica</span> <span class="pre">(VT)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-homicidios">
+<h3><strong>Data Homicidios</strong><a class="headerlink" href="#data-homicidios" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Tipo de variable</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+<th class="head"><p><strong>Categorías/Tipo</strong></p></th>
+<th class="head"><p><strong>Tipo de vulnerabilidad</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AÑO</span></code></p></td>
+<td><p>Cuantitativa discreta</p></td>
+<td><p>Año al que corresponde el registro (p.ej., 2023).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2003</span> <span class="pre">-</span> <span class="pre">2024</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">General</span> </code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CANTIDAD</span></code></p></td>
+<td><p>Cuantitativa discreta</p></td>
+<td><p>Número de homicidios reportados en el año y municipio correspondientes.</p></td>
+<td><p>Valor numérico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">social</span> <span class="pre">(VS)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-calidad-del-agua-para-consumo-humano">
+<h3><strong>Data Calidad del Agua para Consumo Humano</strong><a class="headerlink" href="#data-calidad-del-agua-para-consumo-humano" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Tipo de variable</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+<th class="head"><p><strong>Categorías/Tipo</strong></p></th>
+<th class="head"><p><strong>Tipo de vulnerabilidad</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AÑO</span></code></p></td>
+<td><p>Cuantitativa discreta</p></td>
+<td><p>Año del registro de calidad de agua potable (por ejemplo, 2023).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2007</span> <span class="pre">-</span> <span class="pre">2023</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">General</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IRCA</span></code></p></td>
+<td><p>Cuantitativa continua</p></td>
+<td><p>Índice de Riesgo de la Calidad del Agua.</p></td>
+<td><p>Valor numérico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">infraestructura</span> <span class="pre">(VI)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NIVEL_RIESGO</span></code></p></td>
+<td><p>Categórica ordinal</p></td>
+<td><p>Clasificación cualitativa del riesgo según el IRCA.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sin</span> <span class="pre">riesgo</span></code><br><code class="docutils literal notranslate"><span class="pre">Bajo</span></code><br><code class="docutils literal notranslate"><span class="pre">Medio</span></code><br>  <code class="docutils literal notranslate"><span class="pre">Alto</span></code><br>  <code class="docutils literal notranslate"><span class="pre">Inviable</span> <span class="pre">sanitariamente</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">infraestructura</span> <span class="pre">(VI)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-riesgo-de-victimizacion">
+<h3><strong>Data Riesgo de victimización</strong><a class="headerlink" href="#data-riesgo-de-victimizacion" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Tipo de variable</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+<th class="head"><p><strong>Categorías/Tipo</strong></p></th>
+<th class="head"><p><strong>Tipo de vulnerabilidad</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PDET</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Indica si el municipio hace parte del programa PDET</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">geográfica</span> <span class="pre">(VG)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PDET_SITIO</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Indica el lugar al que corresponde el municipio PDET</p></td>
+<td><p>Texto</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">geográfica</span> <span class="pre">(VG)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CLUSTER_RIESGO</span></code></p></td>
+<td><p>Categórica ordinal</p></td>
+<td><p>Nivel de riesgo de victimización del municipio, calculado a partir de indicadores de criminalidad y violencia, y clasificado en cinco niveles ordenados.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Bajo</span></code><br><code class="docutils literal notranslate"><span class="pre">Medio</span> <span class="pre">Bajo</span></code><br><code class="docutils literal notranslate"><span class="pre">Medio</span></code><br><code class="docutils literal notranslate"><span class="pre">Medio</span> <span class="pre">Alto</span></code><br><code class="docutils literal notranslate"><span class="pre">Alto</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">social</span> <span class="pre">(VS)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VALOR_ESTIMADO_CLUSTER</span></code></p></td>
+<td><p>Cuantitativa continua</p></td>
+<td><p>Valor numérico que estima el índice de riesgo de victimización por cada 100 habitantes, asociado al cluster de riesgo correspondiente.</p></td>
+<td><p>Valor numérico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">social</span> <span class="pre">(VS)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="encuesta-nacional-de-calidad-de-vida-2023">
+<h3><strong>Encuesta Nacional de Calidad de vida 2023</strong><a class="headerlink" href="#encuesta-nacional-de-calidad-de-vida-2023" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
@@ -535,219 +798,310 @@ document.write(`
 <em>Ejemplo: Si un factor de expansión es 3, significa que cada observación en la muestra debe ser multiplicada por 3 para estimar el valor correspondiente en la población completa.</em></p>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="encuesta-de-cultura-politica">
-<h1><strong>Encuesta de cultura política</strong><a class="headerlink" href="#encuesta-de-cultura-politica" title="Link to this heading">#</a></h1>
+</section>
+<section id="nivel-manzana">
+<h2><strong>Nivel: Manzana</strong><a class="headerlink" href="#nivel-manzana" title="Link to this heading">#</a></h2>
+<section id="data-censo-nacional-de-poblacion-y-vivienda-2018">
+<h3><strong>Data Censo Nacional de Población y Vivienda 2018</strong><a class="headerlink" href="#data-censo-nacional-de-poblacion-y-vivienda-2018" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Variable</p></th>
-<th class="head"><p>Descripción</p></th>
-<th class="head"><p>Categorías</p></th>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Tipo de variable</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+<th class="head"><p><strong>Categorías/Tipo</strong></p></th>
+<th class="head"><p><strong>Tipo de vulnerabilidad</strong></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ID</span></code></p></td>
-<td><p>Identificación única de la encuesta realizada.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_MANZANA</span></code></p></td>
+<td><p>Cualitativa discreta (ID)</p></td>
+<td><p>Código de la manzana para identificar y fusionar con datos de manzana</p></td>
+<td><p>Código alfanumérico</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">General</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">REGION</span></code></p></td>
-<td><p>Región donde está ubicado la persona encuestada.   <br> <strong>En este caso solo se tendrá en cuenta la región Caribe</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Bogotá</span></code>, <code class="docutils literal notranslate"><span class="pre">Caribe</span></code>, <code class="docutils literal notranslate"><span class="pre">Oriental</span></code>,<code class="docutils literal notranslate"><span class="pre">Central</span></code>,<code class="docutils literal notranslate"><span class="pre">Pacífica</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALFABETA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Sabe leer y escribir</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">No</span> <span class="pre">aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Acceso</span> <span class="pre">a</span> <span class="pre">Información</span> <span class="pre">(VA)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FEX_P</span></code></p></td>
-<td><p>Factor de expansión muestral.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ASISTENCIA_ESCOLAR</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Asistencia escolar (presencial o virtual)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">No</span> <span class="pre">aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Social</span> <span class="pre">(VS)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PERCEPCION_DEMOCRACIA</span></code></p></td>
-<td><p>Percepción general sobre la democracia en Colombia.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Democrático</span></code><br><code class="docutils literal notranslate"><span class="pre">Medianamente</span> <span class="pre">democrático</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">democrático</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NIVEL_EDUCATIVO</span></code></p></td>
+<td><p>Categórica ordinal</p></td>
+<td><p>Nivel educativo más alto alcanzado y último año o grado aprobado</p></td>
+<td><p>Categorías sobre nivel educativo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Acceso</span> <span class="pre">a</span> <span class="pre">Información</span> <span class="pre">(VA)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SATISFACCION_DEMOCRACIA</span></code></p></td>
-<td><p>Grado de satisfacción con el funcionamiento de la democracia en Colombia.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Muy</span> <span class="pre">insatisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Insatisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Ni</span> <span class="pre">satisfecho(a)</span> <span class="pre">ni</span> <span class="pre">insatisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Satisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">Muy</span> <span class="pre">satisfecho(a)</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/no</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ULTIMOS_PROBLEMAS_SALUD</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Algún problema de salud en los últimos 30 días, sin hospitalización</p></td>
+<td><p>Texto libre</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Acceso</span> <span class="pre">a</span> <span class="pre">Salud</span> <span class="pre">(VH)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RESPETO_ELEGIR_SER_ELEGIDO</span></code></p></td>
-<td><p>Considera que en Colombia se respeta el derecho a elegir y ser elegido.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CALIDAD_SERVICIO_SALUD</span></code></p></td>
+<td><p>Categórica ordinal</p></td>
+<td><p>Calidad de la prestación del servicio de salud</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Muy</span> <span class="pre">bueno</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">Bueno</span></code><br><code class="docutils literal notranslate"><span class="pre">3:</span> <span class="pre">Malo</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">Muy</span> <span class="pre">malo</span></code><br><code class="docutils literal notranslate"><span class="pre">6:</span> <span class="pre">No</span> <span class="pre">aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Acceso</span> <span class="pre">a</span> <span class="pre">Salud</span> <span class="pre">(VH)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GARANTIA_PARTICIPACION</span></code></p></td>
-<td><p>Considera que en Colombia se garantiza el derecho a participar.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TIPO_VIVIENDA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Tipo de vivienda</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Casa</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">Apartamento</span></code><br><code class="docutils literal notranslate"><span class="pre">3:</span> <span class="pre">Tipo</span> <span class="pre">cuarto</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">Vivienda</span> <span class="pre">tradicional</span> <span class="pre">indígena</span></code><br><code class="docutils literal notranslate"><span class="pre">5:</span> <span class="pre">Vivienda</span> <span class="pre">tradicional</span> <span class="pre">étnica</span> <span class="pre">(Afrocolombiana,</span> <span class="pre">Isleña,</span> <span class="pre">Rrom)</span></code><br><code class="docutils literal notranslate"><span class="pre">6:</span> <span class="pre">Otro</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Geográfica</span> <span class="pre">(VG)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LIBERTAD_EXPRESION</span></code></p></td>
-<td><p>Considera que en Colombia existe libertad para expresar y difundir el pensamiento.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TOTAL_HOGARES</span></code></p></td>
+<td><p>Cuantitativa discreta</p></td>
+<td><p>Total de hogares en la vivienda</p></td>
+<td><p>Número entero</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">General</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LIBERTAD_PERTENENCIA_POLITICA</span></code></p></td>
-<td><p>Considera que en Colombia existe libertad para pertenecer a partidos y movimientos políticos.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TOTAL_PERSONAS_HOGAR</span></code></p></td>
+<td><p>Cuantitativa discreta</p></td>
+<td><p>Total de personas en el hogar</p></td>
+<td><p>Número entero</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">General</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GARANTIA_MANIFESTACION</span></code></p></td>
-<td><p>Considera que en Colombia existen garantías para manifestarse públicamente.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MATERIAL_PARED</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Material predominante en paredes exteriores</p></td>
+<td><p>Categorías de materiales</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Infraestructura</span> <span class="pre">(VI)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IGUALDAD_ANTE_LA_LEY</span></code></p></td>
-<td><p>Considera que en Colombia se garantiza el derecho a la igualdad ante la ley.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MATERIAL_PISO</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Material predominante en los pisos</p></td>
+<td><p>Categorías de materiales</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Infraestructura</span> <span class="pre">(VI)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACCESO_INFO_PUBLICA</span></code></p></td>
-<td><p>Considera que en Colombia se facilita el acceso de los ciudadanos a la información pública.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ALCANTARILLADO</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Cuenta con servicio de alcantarillado</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Infraestructura</span> <span class="pre">(VI)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CONTROL_SOCIAL_GESTION</span></code></p></td>
-<td><p>Considera que en Colombia se permite a los ciudadanos ejercer control social sobre la gestión del Estado.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SERVICIO_INTERNET</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Cuenta con servicio de internet (fijo o móvil)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Tecnológica</span> <span class="pre">(VT)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_VIDA_LIBERTAD</span></code></p></td>
-<td><p>Considera que en Colombia se protegen los derechos a la vida, libertad, integridad y seguridad.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ENERGIA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Cuenta con servicio de energía eléctrica</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">General</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_SOCIALES</span></code></p></td>
-<td><p>Considera que en Colombia se protegen los derechos a educación, salud, seguridad social, trabajo y vivienda.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ACUEDUCTO</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Cuenta con servicio de acueducto</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Infraestructura</span> <span class="pre">(VI)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_LIBERTAD_INFORMACION</span></code></p></td>
-<td><p>Considera que en Colombia se protegen los derechos a la libertad de expresión, conciencia y divulgación de información.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GAS</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Cuenta con servicio de gas natural conectado a red pública</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Infraestructura</span> <span class="pre">(VI)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_RECREACION_CULTURA</span></code></p></td>
-<td><p>Considera que en Colombia se protegen los derechos a la recreación y la cultura.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ESTRATO</span></code></p></td>
+<td><p>Categórica ordinal</p></td>
+<td><p>Estrato de la vivienda (según servicio de energía)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0:</span> <span class="pre">Sin</span> <span class="pre">estrato</span></code><br><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Estrato</span> <span class="pre">1</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">Estrato</span> <span class="pre">2</span></code><br><code class="docutils literal notranslate"><span class="pre">3:</span> <span class="pre">Estrato</span> <span class="pre">3</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">Estrato</span> <span class="pre">4</span></code><br><code class="docutils literal notranslate"><span class="pre">5:</span> <span class="pre">Estrato</span> <span class="pre">5</span></code><br><code class="docutils literal notranslate"><span class="pre">6:</span> <span class="pre">Estrato</span> <span class="pre">6</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">sabe</span> <span class="pre">el</span> <span class="pre">estrato</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Económica</span> <span class="pre">(VE)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_MINORIAS</span></code></p></td>
-<td><p>Considera que en Colombia se protegen los derechos de las minorías étnicas y sociales.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AGUA_COCINA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Fuente de agua para preparar los alimentos</p></td>
+<td><p>Categorías de fuente de agua</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Infraestructura</span> <span class="pre">(VI)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_CAMPESINOS</span></code></p></td>
-<td><p>Considera que en Colombia se protegen los derechos del campesinado.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LUGAR_COCINA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Lugar donde preparan los alimentos</p></td>
+<td><p>Categorías de ubicación</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">de</span> <span class="pre">Infraestructura</span> <span class="pre">(VI)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PROTECCION_DERECHOS_MUJERES</span></code></p></td>
-<td><p>Considera que en Colombia se protegen los derechos de las mujeres.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TERR_ETNICA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Vivienda en una territorialidad étnica</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Cultural</span> <span class="pre">(VC)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RIESGOS_COMUNIDAD</span></code></p></td>
-<td><p>Percepción sobre si en el último año surgieron riesgos en la comunidad del encuestado contra la vida, libertad e integridad (por ejemplo, estigmatización o discriminación).</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">SI</span></code><br><code class="docutils literal notranslate"><span class="pre">NO</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TIPO_TERR_ETNICA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Tipo de territorialidad étnica</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Resguardo</span> <span class="pre">indígena</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">Territorio</span> <span class="pre">colectivo</span> <span class="pre">de</span> <span class="pre">comunidad</span> <span class="pre">negra</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Cultural</span> <span class="pre">(VC)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CONFIANZA_ALCALDIA</span></code></p></td>
-<td><p>Nivel de confianza del encuestado en la Alcaldía Municipal o Distrital.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Ni</span> <span class="pre">mucho</span> <span class="pre">ni</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">mucho</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VIVIENDA_AREA_PROTEGIDA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Vivienda en un área protegida</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">No</span> <span class="pre">aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Ambiental</span> <span class="pre">(VAM)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CONFIANZA_FUERZAS_MILITARES</span></code></p></td>
-<td><p>Nivel de confianza del encuestado en las Fuerzas Militares (Ejército, Armada y Fuerza Aérea).</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Ni</span> <span class="pre">mucho</span> <span class="pre">ni</span> <span class="pre">poco</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span></code><br><code class="docutils literal notranslate"><span class="pre">Confía</span> <span class="pre">mucho</span></code><br><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">sabe/No</span> <span class="pre">informa</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_VIV_AREA_PROTEGIDA</span></code></p></td>
+<td><p>Cualitativa discreta (ID)</p></td>
+<td><p>Código del área protegida</p></td>
+<td><p>Códigos de áreas protegidas</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Ambiental</span> <span class="pre">(VAM)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RECONOCIMIENTO_ETNICO</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Reconocimiento étnico</p></td>
+<td><p>Categorías sobre grupos étnicos</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Cultural</span> <span class="pre">(VC)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_ETNIA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Pueblo indígena de pertenencia</p></td>
+<td><p>Categorías sobre pueblos</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Cultural</span> <span class="pre">(VC)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HABLA_LENGUA_NATIVA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Habla la lengua nativa de su pueblo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">No</span> <span class="pre">aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Cultural</span> <span class="pre">(VC)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ENTIENDE_LENGUA_NATIVA</span></code></p></td>
+<td><p>Categórica nominal</p></td>
+<td><p>Entiende la lengua nativa de su pueblo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1:</span> <span class="pre">Sí</span></code><br><code class="docutils literal notranslate"><span class="pre">2:</span> <span class="pre">No</span></code><br><code class="docutils literal notranslate"><span class="pre">4:</span> <span class="pre">No</span> <span class="pre">aplica</span></code><br><code class="docutils literal notranslate"><span class="pre">9:</span> <span class="pre">No</span> <span class="pre">informa</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Vulnerabilidad</span> <span class="pre">Cultural</span> <span class="pre">(VC)</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="pib">
-<h1><strong>PIB</strong><a class="headerlink" href="#pib" title="Link to this heading">#</a></h1>
+</section>
+<section id="georeferenciacion-de-las-manzanas">
+<h2><strong>Georeferenciación de las manzanas</strong><a class="headerlink" href="#georeferenciacion-de-las-manzanas" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
 <th class="head"><p>Descripción</p></th>
-<th class="head"><p>Categorías / Tipo</p></th>
+<th class="head"><p>Tipo / Categoría</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_DEPTO</span></code></p></td>
-<td><p>Código del departamento.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
+<td><p>Código DANE del departamento.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(2)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DEPARTAMENTO</span></code></p></td>
-<td><p>Nombre del departamento.<br> <strong>En este caso solo se tendrán en cuenta los departamentos de la región Caribe</strong></p></td>
+<td><p>Nombre del departamento.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PIB</span></code></p></td>
-<td><p>Producto interno bruto departamental a precios corrientes y en miles de millones de pesos.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COD_MUNI</span></code></p></td>
+<td><p>Código DANE del municipio.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(3)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PARTICIPACION_PORCENTUAL</span></code></p></td>
-<td><p>Participación porcentual de cada departamento en el PIB global de Colombia</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Numérico</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MUNICIPIO</span></code></p></td>
+<td><p>Nombre del municipio.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Texto</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AÑO</span></code></p></td>
-<td><p>Año en el que fue evaluada la medida PIB</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">2023</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MPIO_CDPMP</span></code></p></td>
+<td><p>Código DANE concatenado del departamento y municipio.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(5)</span></code></p></td>
 </tr>
-</tbody>
-</table>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="georeferenciacion-de-las-manzanas">
-<h1><strong>Georeferenciación de las manzanas</strong><a class="headerlink" href="#georeferenciacion-de-las-manzanas" title="Link to this heading">#</a></h1>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Variable</p></th>
-<th class="head"><p>Descripción</p></th>
-<th class="head"><p>Categorías</p></th>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CLAS_CCDGO</span></code></p></td>
+<td><p>Código DANE de la clase (1 = Cabecera municipal, 2 = Centro poblado).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(1)</span></code></p></td>
 </tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dpto_ccdgo</span></code></p></td>
-<td><p>Código del departamento según DIVIPOLA.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Text(2)</span></code>, Ej: <code class="docutils literal notranslate"><span class="pre">08</span></code> para Atlántico</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SETR_CCDGO</span></code></p></td>
+<td><p>Código DANE del sector rural.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(3)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mpio_ccdgo</span></code></p></td>
-<td><p>Código del municipio según DIVIPOLA.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Text(3)</span></code>,  Ej: <code class="docutils literal notranslate"><span class="pre">001</span></code> para Barranquilla</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SETR_CCNCT</span></code></p></td>
+<td><p>Código concatenado del departamento, municipio, clase y sector rural.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(9)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mpio_cdpmp</span></code></p></td>
-<td><p>Código del municipio concatenado con el del departamento.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Text(5)</span></code>, Ej: <code class="docutils literal notranslate"><span class="pre">08001</span></code> para Barranquilla (Atlántico + Barranquilla)</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SECR_CCDGO</span></code></p></td>
+<td><p>Código DANE de la sección rural.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(2)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clas_ccdgo</span></code></p></td>
-<td><p>Código de clase de centro poblado según DANE.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Urbano</span></code>: Cabecera municipal <br> <code class="docutils literal notranslate"><span class="pre">Rural</span></code>: Centro poblado</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SECR_CCNCT</span></code></p></td>
+<td><p>Código concatenado del departamento, municipio, clase, sector rural y sección rural.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(11)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manz_ccdgo</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ZU_CCDGO</span></code></p></td>
+<td><p>Código DANE de la zona urbana (cabeceras municipales y centros poblados).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(3)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ZU_CDIVI</span></code></p></td>
+<td><p>Código DANE concatenado del departamento, municipio y zona urbana.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(8)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SETU_CCDGO</span></code></p></td>
+<td><p>Código DANE del sector urbano.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(4)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SETU_CCNCT</span></code></p></td>
+<td><p>Código concatenado del departamento, municipio, clase, sector rural, zona urbana y sector urbano.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(18)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SECU_CCDGO</span></code></p></td>
+<td><p>Código DANE de la sección urbana.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(2)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SECU_CCNCT</span></code></p></td>
+<td><p>Código concatenado del departamento, municipio, clase, sector rural, zona urbana, sector urbano y sección urbana.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Text(20)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_CCDGO</span></code></p></td>
 <td><p>Código DANE de la manzana censal.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Text(2)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manz_ccnct</span></code></p></td>
-<td><p>Código concatenado de la manzana (Depto + Mpio + Clase + otros niveles geográficos).</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_CCNCT</span></code></p></td>
+<td><p>Código DANE concatenado del departamento, municipio, clase, sector rural, zona urbana, sector urbano y manzana.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Text(22)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manz_cag</span></code></p></td>
-<td><p>Código DANE del área geográfica AG.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_CAG</span></code></p></td>
+<td><p>Código DANE del Área Geográfica AG.</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Text(6)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manz_tipo</span></code></p></td>
-<td><p>Clasificación del tipo de manzana por predominancia.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Parque</span></code>, <code class="docutils literal notranslate"><span class="pre">Zona</span> <span class="pre">Verde</span></code>, <code class="docutils literal notranslate"><span class="pre">Alameda</span></code>, <code class="docutils literal notranslate"><span class="pre">Separador</span> <span class="pre">Vial</span></code>, <code class="docutils literal notranslate"><span class="pre">Residencial</span></code>,<code class="docutils literal notranslate"><span class="pre">Comercial</span></code>, <code class="docutils literal notranslate"><span class="pre">Industrial</span></code>, <code class="docutils literal notranslate"><span class="pre">Servicios</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_TIPO</span></code></p></td>
+<td><p>Clasificación del tipo de manzana con mayor predominancia.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Short</span> <span class="pre">Integer</span></code> (Dominio: <code class="docutils literal notranslate"><span class="pre">MANZ_TIPO</span></code>)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manz_narea</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_NAREA</span></code></p></td>
 <td><p>Área de la manzana en metros cuadrados.</p></td>
-<td><p>Ej: <code class="docutils literal notranslate"><span class="pre">1580.75</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Double</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manz_lati</span></code></p></td>
-<td><p>Latitud del centroide de la manzana.</p></td>
-<td><p>Ej: <code class="docutils literal notranslate"><span class="pre">10.9878</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_LATI</span></code></p></td>
+<td><p>Latitud geográfica del centroide de la manzana.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Double</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manz_long</span></code></p></td>
-<td><p>Longitud del centroide de la manzana.</p></td>
-<td><p>Ej: <code class="docutils literal notranslate"><span class="pre">-74.7889</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_LONG</span></code></p></td>
+<td><p>Longitud geográfica del centroide de la manzana.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Double</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manz_viv</span></code></p></td>
-<td><p>Total de viviendas registradas en la manzana.</p></td>
-<td><p>Ej: <code class="docutils literal notranslate"><span class="pre">34</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MANZ_VIV</span></code></p></td>
+<td><p>Total viviendas en la manzana.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Long</span> <span class="pre">Integer</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shape_Leng</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SHAPE_LENG</span></code></p></td>
 <td><p>Longitud del perímetro de la manzana (según shapefile).</p></td>
 <td><p>Ej: <code class="docutils literal notranslate"><span class="pre">500.32</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shape_Area</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SHAPE_AREA</span></code></p></td>
 <td><p>Área de la manzana según el shapefile.</p></td>
 <td><p>Ej: <code class="docutils literal notranslate"><span class="pre">1600.45</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">geometry</span></code></p></td>
-<td><p>Geometría espacial de la manzana (punto o polígono).</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GEOMETRY</span></code></p></td>
+<td><p>Geometría espacial de la manzana.</p></td>
 <td><p>Ej: <code class="docutils literal notranslate"><span class="pre">POLYGON</span> <span class="pre">((-74.79</span> <span class="pre">10.98,</span> <span class="pre">...))</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -780,6 +1134,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="manzanas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Georeferenciación manzanas</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nombres_municipios_region_caribe.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Municipios Región Caribe</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -796,13 +1168,25 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Diccionarios de variables</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida"><strong>Encuesta Nacional de Calidad de Vida</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-de-cultura-politica"><strong>Encuesta de cultura política</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pib"><strong>PIB</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#georeferenciacion-de-las-manzanas"><strong>Georeferenciación de las manzanas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general"><strong>General</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-departamental"><strong>Nivel: Departamental</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-pib-producto-interno-bruto"><strong>Data PIB (Producto Interno Bruto)</strong></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano"><strong>Data Calidad del Agua para Consumo Humano</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encuesta-nacional-de-calidad-de-vida-2023"><strong>Encuesta Nacional de Calidad de vida 2023</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-censo-nacional-de-poblacion-y-vivienda-2018"><strong>Data Censo Nacional de Población y Vivienda 2018</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#georeferenciacion-de-las-manzanas"><strong>Georeferenciación de las manzanas</strong></a></li>
+</ul>
   </nav></div>
 
 </div></div>

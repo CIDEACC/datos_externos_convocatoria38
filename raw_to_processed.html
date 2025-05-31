@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'raw_to_processed';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Datos de interés - Fuentes externas" href="data_externa.html" />
+    <link rel="next" title="Georeferenciación manzanas" href="manzanas.html" />
     <link rel="prev" title="Reglas de Trabajo" href="reglas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,9 +177,8 @@
 <li class="toctree-l1"><a class="reference internal" href="reglas.html"><strong>Reglas de Trabajo</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Raw to Processed</strong></a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="data_externa.html"><strong>Datos de interés - Fuentes externas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="diccionarios_update.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
@@ -386,10 +385,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encuesta-nacional-de-calidad-de-vida"><strong>Data Encuesta Nacional de Calidad de vida</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">
@@ -422,6 +422,7 @@ document.write(`
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones.faltantes</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_pib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_ecv</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_calidad_agua</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_acceso_internet</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_casos_de_homicidio</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -557,121 +558,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 </section>
 <section id="nivel-municipal">
 <h2><strong>Nivel: Municipal</strong><a class="headerlink" href="#nivel-municipal" title="Link to this heading">#</a></h2>
-<section id="data-calidad-del-agua-para-consumo-humano-en-colombia">
-<h3><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong><a class="headerlink" href="#data-calidad-del-agua-para-consumo-humano-en-colombia" title="Link to this heading">#</a></h3>
-<p><strong>Descripción:</strong></p>
-<p>El Sistema de Información de la Vigilancia de la Calidad del Agua de Potable <strong>(SIVICAP)</strong> fue creado para monitorear la calidad del agua potable en Colombia desde la perspectiva de la vigilancia en salud pública. Este sistema genera el Índice de Riesgo de la Calidad de Agua Potable <strong>(IRCA)</strong>, que cuantifica en porcentaje el nivel de riesgo de ocurrencia de enfermedades asociadas al incumplimiento de características físicas, químicas y microbiológicas del agua destinada al consumo humano.</p>
-<p><em><strong>Observación:</strong></em> El conjunto de datos contiene históricos del valor promedio anual del IRCA, desagregados por departamento, municipio, área urbana y área rural, cubriendo el periodo desde 2007 en adelante. En este caso, el nivel escogido es municipal.</p>
-<p><strong>Fuentes:</strong></p>
-<ul class="simple">
-<li><p>Pagina oficial: <span id="id2">[<a class="reference internal" href="#id11" title="Instituto Nacional de Salud de Colombia. Sivicap. 2025. Página oficial. URL: https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx.">6</a>]</span></p></li>
-<li><p>Datos: <span id="id3">[<a class="reference internal" href="#id12" title="Gobierno de Colombia. Calidad del agua para consumo humano en colombia. Datos abiertos (datos.gov.co), 2025. Accedido el 22 de mayo de 2025. URL: https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data.">5</a>]</span></p></li>
-</ul>
-<p><strong>Diccionario de variables:</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_calidad_agua</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1rPVSPwtca-q248RwKBYuEqO8BE1pzvMn&quot;</span><span class="p">)</span>
-<span class="n">data_processed_calidad_agua</span> <span class="o">=</span> <span class="n">data_cleaned_calidad_del_agua</span><span class="p">(</span><span class="n">data_raw_calidad_agua</span><span class="p">,</span> <span class="s1">&#39;CARIBE&#39;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">data_processed_calidad_agua</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No hay datos faltantes.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_calidad_agua</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>COD_DEPTO</th>
-      <th>DEPARTAMENTO</th>
-      <th>COD_MUNI</th>
-      <th>IRCA</th>
-      <th>NIVEL_RIESGO</th>
-      <th>MUNICIPIO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6</th>
-      <td>70</td>
-      <td>SUCRE</td>
-      <td>70235</td>
-      <td>4.6</td>
-      <td>Sin riesgo</td>
-      <td>GALERAS</td>
-    </tr>
-    <tr>
-      <th>2129</th>
-      <td>08</td>
-      <td>ATLANTICO</td>
-      <td>08001</td>
-      <td>0.0</td>
-      <td>Sin riesgo</td>
-      <td>BARRANQUILLA</td>
-    </tr>
-    <tr>
-      <th>2146</th>
-      <td>08</td>
-      <td>ATLANTICO</td>
-      <td>08078</td>
-      <td>10.5</td>
-      <td>Riesgo bajo</td>
-      <td>BARANOA</td>
-    </tr>
-    <tr>
-      <th>2163</th>
-      <td>08</td>
-      <td>ATLANTICO</td>
-      <td>08137</td>
-      <td>0.0</td>
-      <td>Sin riesgo</td>
-      <td>CAMPO DE LA CRUZ</td>
-    </tr>
-    <tr>
-      <th>2180</th>
-      <td>08</td>
-      <td>ATLANTICO</td>
-      <td>08141</td>
-      <td>0.0</td>
-      <td>Sin riesgo</td>
-      <td>CANDELARIA</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
 <section id="data-acceso-a-internet">
 <h3><strong>Data Acceso a Internet</strong><a class="headerlink" href="#data-acceso-a-internet" title="Link to this heading">#</a></h3>
 <p><strong>Descripción:</strong></p>
@@ -679,8 +565,8 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 <p><em><strong>Observación:</strong></em> En la base de datos se tienen los registros de los <code class="docutils literal notranslate"><span class="pre">accesos</span> <span class="pre">de</span> <span class="pre">interner</span> <span class="pre">fijos</span> <span class="pre">por</span> <span class="pre">cada</span> <span class="pre">100</span> <span class="pre">habitantes</span> <span class="pre">por</span> <span class="pre">departamentos</span> <span class="pre">y</span> <span class="pre">municipios</span> <span class="pre">de</span> <span class="pre">Colombia</span></code> desde año a año</p>
 <p><strong>Fuentes:</strong></p>
 <ul class="simple">
-<li><p>Pagina oficial: <span id="id4">[<a class="reference internal" href="#id13" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: https://colombiatic.mintic.gov.co/679/w3-channel.html.">7</a>]</span></p></li>
-<li><p>Datos: <span id="id5">[<a class="reference internal" href="#id14" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8.">8</a>]</span></p></li>
+<li><p>Pagina oficial: <span id="id2">[<a class="reference internal" href="#id13" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: https://colombiatic.mintic.gov.co/679/w3-channel.html.">7</a>]</span></p></li>
+<li><p>Datos: <span id="id3">[<a class="reference internal" href="#id14" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8.">8</a>]</span></p></li>
 </ul>
 <p><strong>Diccionario de variables</strong></p>
 <div class="cell docutils container">
@@ -794,7 +680,7 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 <p><em><strong>Observación:</strong></em> En la base de datos se tienen los registros de los <code class="docutils literal notranslate"><span class="pre">casos</span> <span class="pre">de</span> <span class="pre">homicidio</span> <span class="pre">que</span> <span class="pre">se</span> <span class="pre">presentaron</span> <span class="pre">por</span> <span class="pre">departamentos</span> <span class="pre">y</span> <span class="pre">municipios</span> <span class="pre">de</span> <span class="pre">Colombia</span></code> desde 2003 a 2025</p>
 <p><strong>Fuentes:</strong></p>
 <ul class="simple">
-<li><p>Datos: <span id="id6">[<a class="reference internal" href="#id15" title="Datos Abiertos Colombia. Homicidio. 2025. Conjunto de datos abierto sobre homicidios en Colombia. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data.">1</a>]</span></p></li>
+<li><p>Datos: <span id="id4">[<a class="reference internal" href="#id15" title="Datos Abiertos Colombia. Homicidio. 2025. Conjunto de datos abierto sobre homicidios en Colombia. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data.">1</a>]</span></p></li>
 </ul>
 <p><strong>Diccionario de variables:</strong></p>
 <div class="cell docutils container">
@@ -901,6 +787,127 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 </div></div></div>
 </div>
 </section>
+<section id="data-calidad-del-agua-para-consumo-humano-en-colombia">
+<h3><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong><a class="headerlink" href="#data-calidad-del-agua-para-consumo-humano-en-colombia" title="Link to this heading">#</a></h3>
+<p><strong>Descripción:</strong></p>
+<p>El Sistema de Información de la Vigilancia de la Calidad del Agua de Potable <strong>(SIVICAP)</strong> fue creado para monitorear la calidad del agua potable en Colombia desde la perspectiva de la vigilancia en salud pública. Este sistema genera el Índice de Riesgo de la Calidad de Agua Potable <strong>(IRCA)</strong>, que cuantifica en porcentaje el nivel de riesgo de ocurrencia de enfermedades asociadas al incumplimiento de características físicas, químicas y microbiológicas del agua destinada al consumo humano.</p>
+<p><em><strong>Observación:</strong></em> El conjunto de datos contiene históricos del valor promedio anual del IRCA, desagregados por departamento, municipio, área urbana y área rural, cubriendo el periodo desde 2007 en adelante. En este caso, el nivel escogido es municipal.</p>
+<p><strong>Fuentes:</strong></p>
+<ul class="simple">
+<li><p>Pagina oficial: <span id="id5">[<a class="reference internal" href="#id11" title="Instituto Nacional de Salud de Colombia. Sivicap. 2025. Página oficial. URL: https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx.">6</a>]</span></p></li>
+<li><p>Datos: <span id="id6">[<a class="reference internal" href="#id12" title="Gobierno de Colombia. Calidad del agua para consumo humano en colombia. Datos abiertos (datos.gov.co), 2025. Accedido el 22 de mayo de 2025. URL: https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data.">5</a>]</span></p></li>
+</ul>
+<p><strong>Diccionario de variables:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_calidad_agua</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1rPVSPwtca-q248RwKBYuEqO8BE1pzvMn&quot;</span><span class="p">)</span>
+<span class="n">data_processed_calidad_agua</span> <span class="o">=</span> <span class="n">data_cleaned_calidad_del_agua</span><span class="p">(</span><span class="n">data_raw_calidad_agua</span><span class="p">,</span> <span class="s1">&#39;CARIBE&#39;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>En la región Caribe hay 197 municipios.
+Tu DataFrame incluye datos de 181 de los 197 municipios de la región Caribe; Faltan 16 municipios.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">data_processed_calidad_agua</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No hay datos faltantes.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_calidad_agua</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>DEPARTAMENTO</th>
+      <th>COD_MUNI</th>
+      <th>IRCA</th>
+      <th>NIVEL_RIESGO</th>
+      <th>MUNICIPIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>70</td>
+      <td>SUCRE</td>
+      <td>70235</td>
+      <td>4.6</td>
+      <td>Sin riesgo</td>
+      <td>GALERAS</td>
+    </tr>
+    <tr>
+      <th>2129</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08001</td>
+      <td>0.0</td>
+      <td>Sin riesgo</td>
+      <td>BARRANQUILLA</td>
+    </tr>
+    <tr>
+      <th>2146</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08078</td>
+      <td>10.5</td>
+      <td>Riesgo bajo</td>
+      <td>BARANOA</td>
+    </tr>
+    <tr>
+      <th>2163</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08137</td>
+      <td>0.0</td>
+      <td>Sin riesgo</td>
+      <td>CAMPO DE LA CRUZ</td>
+    </tr>
+    <tr>
+      <th>2180</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08141</td>
+      <td>0.0</td>
+      <td>Sin riesgo</td>
+      <td>CANDELARIA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 <section id="data-riesgo-de-victimizacion">
 <h3><strong>Data Riesgo de victimización</strong><a class="headerlink" href="#data-riesgo-de-victimizacion" title="Link to this heading">#</a></h3>
 <p><strong>Descripción:</strong><br />
@@ -967,7 +974,7 @@ Para cada municipio se reporta:</p>
       <th>DEPARTAMENTO</th>
       <th>VALOR_ESTIMADO_CLUSTER</th>
       <th>CLUSTER_RIESGO</th>
-      <th>PDET_FLAG</th>
+      <th>PDET</th>
       <th>PDET_SITIO</th>
       <th>MUNICIPIO</th>
     </tr>
@@ -1030,6 +1037,217 @@ Para cada municipio se reporta:</p>
     </tr>
   </tbody>
 </table>
+</div></div></div>
+</div>
+</section>
+<section id="data-encuesta-nacional-de-calidad-de-vida">
+<h3><strong>Data Encuesta Nacional de Calidad de vida</strong><a class="headerlink" href="#data-encuesta-nacional-de-calidad-de-vida" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_servicios_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1E7ErWrsPAR48RlI8BPctjpIhvbkpYkH2&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_salud_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1DkzguaTEm0NauAIdB3mXGomU5AF3r-pP&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_internet_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1ZeKQD4eWcXlf4-O41K51qRd4NWnF1BJ2&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_vivienda_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1P8zk8hkaRDld9LVunssQ40bn5KbfxcHi&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_hogar_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1B7YBNLnYc4mzwHHGGvzzlG63-4QY6kvc&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_ecv</span> <span class="o">=</span> <span class="n">data_cleaned_ecv</span><span class="p">(</span><span class="n">df_vivienda_2023</span><span class="p">,</span> <span class="n">df_hogar_2023</span><span class="p">,</span> <span class="n">df_servicios_2023</span><span class="p">,</span> <span class="n">df_salud_2023</span><span class="p">,</span> <span class="n">df_internet_2023</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>En la región Caribe hay 197 municipios.
+Tu DataFrame incluye datos de 147 de los 197 municipios de la región Caribe; Faltan 50 municipios.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">data_processed_ecv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3d0257768f5dea13a7dc27b17b177782eb774bea27049f5cda6ed95e7969505e.png" src="_images/3d0257768f5dea13a7dc27b17b177782eb774bea27049f5cda6ed95e7969505e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_ecv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>COD_MUNI</th>
+      <th>DEPARTAMENTO</th>
+      <th>MUNICIPIO</th>
+      <th>RUIDOS</th>
+      <th>MALOS_OLORES</th>
+      <th>PRESENCIA_BASURAS</th>
+      <th>CONTAMINACION_AIRE</th>
+      <th>CONTAMINACION_AGUA</th>
+      <th>INVASION_ESPACIO_PUBLICO</th>
+      <th>...</th>
+      <th>INGRESO_MENSUAL_TOTAL</th>
+      <th>PAGO_SEG_SOCIAL</th>
+      <th>UBICACION_ENTIDAD_SALUD</th>
+      <th>RESPONSABLE_PAGO_AFILIACION</th>
+      <th>SEG_SOCIAL</th>
+      <th>MEDICINA_PREPAGADA</th>
+      <th>PLAN_COMPLEMENTARIO_EPS</th>
+      <th>POLIZA_HOSPITALIZACION_CIRUGIA</th>
+      <th>FRECUENCIA_INTERNET</th>
+      <th>PERCEPCION_CALIDAD_DE_VIDA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>47</td>
+      <td>47245</td>
+      <td>MAGDALENA</td>
+      <td>EL BANCO</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>7.200000e+05</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>13</td>
+      <td>13001</td>
+      <td>BOLIVAR</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1.400000e+06</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>13</td>
+      <td>13001</td>
+      <td>BOLIVAR</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>9.000000e+05</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>13</td>
+      <td>13001</td>
+      <td>BOLIVAR</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>4.131433e+06</td>
+      <td>145000.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>13</td>
+      <td>13001</td>
+      <td>BOLIVAR</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1.004167e+06</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1253,7 +1471,7 @@ Debido al gran volumen de archivos, la data no está alojada en la nube y se tra
 <div class="docutils container" id="id10">
 <div role="list" class="citation-list">
 <div class="citation" id="id15" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">1</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">1</a><span class="fn-bracket">]</span></span>
 <p>Datos Abiertos Colombia. Homicidio. 2025. Conjunto de datos abierto sobre homicidios en Colombia. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data">https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data</a>.</p>
 </div>
 <div class="citation" id="id19" role="doc-biblioentry">
@@ -1269,19 +1487,19 @@ Debido al gran volumen de archivos, la data no está alojada en la nube y se tra
 <p>Dirección de Censos y Demografía (DCD) and Departamento Administrativo Nacional de Estadística (DANE). Censo Nacional de Población y Vivienda – CNPV – 2018. <a class="reference external" href="https://microdatos.dane.gov.co/index.php/catalog/643">https://microdatos.dane.gov.co/index.php/catalog/643</a>, February 2023. Accessed: 2025-05-28.</p>
 </div>
 <div class="citation" id="id12" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">5</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
 <p>Gobierno de Colombia. Calidad del agua para consumo humano en colombia. Datos abiertos (datos.gov.co), 2025. Accedido el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data">https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data</a>.</p>
 </div>
 <div class="citation" id="id11" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">6</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">6</a><span class="fn-bracket">]</span></span>
 <p>Instituto Nacional de Salud de Colombia. Sivicap. 2025. Página oficial. URL: <a class="reference external" href="https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx">https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx</a>.</p>
 </div>
 <div class="citation" id="id13" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">7</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">7</a><span class="fn-bracket">]</span></span>
 <p>Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://colombiatic.mintic.gov.co/679/w3-channel.html">https://colombiatic.mintic.gov.co/679/w3-channel.html</a>.</p>
 </div>
 <div class="citation" id="id14" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">8</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">8</a><span class="fn-bracket">]</span></span>
 <p>Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8">https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8</a>.</p>
 </div>
 <div class="citation" id="id17" role="doc-biblioentry">
@@ -1332,11 +1550,11 @@ Debido al gran volumen de archivos, la data no está alojada en la nube y se tra
       </div>
     </a>
     <a class="right-next"
-       href="data_externa.html"
+       href="manzanas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Datos de interés - Fuentes externas</strong></p>
+        <p class="prev-next-title"><strong>Georeferenciación manzanas</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1366,10 +1584,11 @@ Debido al gran volumen de archivos, la data no está alojada en la nube y se tra
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-municipal"><strong>Nivel: Municipal</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acceso-a-internet"><strong>Data Acceso a Internet</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-homicidios"><strong>Data Homicidios</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encuesta-nacional-de-calidad-de-vida"><strong>Data Encuesta Nacional de Calidad de vida</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">
