@@ -185,6 +185,8 @@
 
 <li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_dataset.html"><strong>Conjunto de datos final</strong></a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
 </ul>
 
@@ -396,6 +398,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encuesta-nacional-de-calidad-de-vida"><strong>Data Encuesta Nacional de Calidad de vida</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-centros-de-salud"><strong>Data Centros de salud</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">
@@ -431,6 +434,7 @@ document.write(`
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_ecv</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_calidad_agua</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_acceso_internet</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_centros_de_salud</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_casos_de_homicidio</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_censo.data_censo_dane</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_riesgo_de_victimizacion</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -517,7 +521,7 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <th>COD_DEPTO</th>
       <th>DEPARTAMENTO</th>
       <th>PIB</th>
-      <th>PARTICIPACION_PORCENTUAL</th>
+      <th>PARTICIPACION_PORCENTUAL_PIB</th>
     </tr>
   </thead>
   <tbody>
@@ -568,8 +572,9 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 <h3><strong>Data Acceso a Internet</strong><a class="headerlink" href="#data-acceso-a-internet" title="Link to this heading">#</a></h3>
 <p><strong>Descripción:</strong></p>
 <p>Número de suscriptores con acceso dedicado a Internet para cada uno de los departamentos y municipios de Colombia, según los datos reportados por los proveedores al último día de cada trimestre . Basados en estos datos y en las proyecciones del DANE para la población por municipio, departamento y en total en Colombia, se muestra el porcentaje de penetración de Internet fijo para el periodo comprendido desde 2015-4T hasta el ultimo trimestre publicado.</p>
-<p><em><strong>Observación:</strong></em> En la base de datos se tienen los registros de los <code class="docutils literal notranslate"><span class="pre">accesos</span> <span class="pre">de</span> <span class="pre">interner</span> <span class="pre">fijos</span> <span class="pre">por</span> <span class="pre">cada</span> <span class="pre">100</span> <span class="pre">habitantes</span> <span class="pre">por</span> <span class="pre">departamentos</span> <span class="pre">y</span> <span class="pre">municipios</span> <span class="pre">de</span> <span class="pre">Colombia</span></code> desde año a año</p>
-<p><strong>Fuentes:</strong></p>
+<p><em><strong>Observación:</strong></em> En la base de datos se tienen los registros de los <code class="docutils literal notranslate"><span class="pre">accesos</span> <span class="pre">de</span> <span class="pre">interner</span> <span class="pre">fijos</span> <span class="pre">por</span> <span class="pre">cada</span> <span class="pre">100</span> <span class="pre">habitantes</span> <span class="pre">por</span> <span class="pre">departamentos</span> <span class="pre">y</span> <span class="pre">municipios</span> <span class="pre">de</span> <span class="pre">Colombia</span></code> desde año a año
+En la data original se tienen la información por trimestre para cada año, entonces se agrupo cada año y se calculo la mediana de los trimestres.
+<strong>Fuentes:</strong></p>
 <ul class="simple">
 <li><p>Pagina oficial: <span id="id2">[<a class="reference internal" href="#id13" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: https://colombiatic.mintic.gov.co/679/w3-channel.html.">7</a>]</span></p></li>
 <li><p>Datos: <span id="id3">[<a class="reference internal" href="#id14" title="Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8.">8</a>]</span></p></li>
@@ -579,6 +584,13 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_internet</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1itLnFvy4_OBlT57dzn__VxBtkSUA7XFr&quot;</span><span class="p">)</span>
 <span class="n">data_processed_internet</span> <span class="o">=</span> <span class="n">data_cleaned_acceso_internet</span><span class="p">(</span><span class="n">data_raw_internet</span><span class="p">,</span> <span class="s1">&#39;CARIBE&#39;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_raw_internet</span>
 </pre></div>
 </div>
 </div>
@@ -620,7 +632,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>AÑO</th>
       <th>COD_DEPTO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_MUNI</th>
@@ -631,7 +642,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
   <tbody>
     <tr>
       <th>125</th>
-      <td>2023</td>
       <td>08</td>
       <td>ATLANTICO</td>
       <td>08001</td>
@@ -640,7 +650,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
     </tr>
     <tr>
       <th>126</th>
-      <td>2023</td>
       <td>08</td>
       <td>ATLANTICO</td>
       <td>08078</td>
@@ -649,7 +658,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
     </tr>
     <tr>
       <th>127</th>
-      <td>2023</td>
       <td>08</td>
       <td>ATLANTICO</td>
       <td>08137</td>
@@ -658,7 +666,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
     </tr>
     <tr>
       <th>128</th>
-      <td>2023</td>
       <td>08</td>
       <td>ATLANTICO</td>
       <td>08141</td>
@@ -667,7 +674,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
     </tr>
     <tr>
       <th>129</th>
-      <td>2023</td>
       <td>08</td>
       <td>ATLANTICO</td>
       <td>08296</td>
@@ -678,6 +684,7 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 </table>
 </div></div></div>
 </div>
+<p><strong>NOTA:</strong> Se podría considerar una mediana de todos los años (para ver que tantas personas acumuladamente tienen acceso a internet).</p>
 </section>
 <section id="data-homicidios">
 <h3><strong>Data Homicidios</strong><a class="headerlink" href="#data-homicidios" title="Link to this heading">#</a></h3>
@@ -737,8 +744,7 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <th>COD_DEPTO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_MUNI</th>
-      <th>AÑO</th>
-      <th>CANTIDAD</th>
+      <th>CANTIDAD_HOMICIDIOS</th>
       <th>MUNICIPIO</th>
     </tr>
   </thead>
@@ -748,7 +754,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>08</td>
       <td>ATLANTICO</td>
       <td>08001</td>
-      <td>2023</td>
       <td>375</td>
       <td>BARRANQUILLA</td>
     </tr>
@@ -757,7 +762,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>13</td>
       <td>BOLIVAR</td>
       <td>13001</td>
-      <td>2023</td>
       <td>0</td>
       <td>CARTAGENA DE INDIAS</td>
     </tr>
@@ -766,7 +770,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>13</td>
       <td>BOLIVAR</td>
       <td>13244</td>
-      <td>2023</td>
       <td>33</td>
       <td>EL CARMEN DE BOLIVAR</td>
     </tr>
@@ -775,7 +778,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>23</td>
       <td>CORDOBA</td>
       <td>23678</td>
-      <td>2023</td>
       <td>9</td>
       <td>SAN CARLOS</td>
     </tr>
@@ -784,7 +786,6 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
       <td>44</td>
       <td>LA GUAJIRA</td>
       <td>44078</td>
-      <td>2023</td>
       <td>7</td>
       <td>BARRANCAS</td>
     </tr>
@@ -792,6 +793,7 @@ Incluir una tabla o listado que explique el significado y tipo de cada variable 
 </table>
 </div></div></div>
 </div>
+<p><strong>NOTA:</strong> Se podría considerar acumulado.</p>
 </section>
 <section id="data-calidad-del-agua-para-consumo-humano-en-colombia">
 <h3><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong><a class="headerlink" href="#data-calidad-del-agua-para-consumo-humano-en-colombia" title="Link to this heading">#</a></h3>
@@ -858,8 +860,8 @@ Tu DataFrame incluye datos de 181 de los 197 municipios de la región Caribe; Fa
       <th>COD_DEPTO</th>
       <th>DEPARTAMENTO</th>
       <th>COD_MUNI</th>
-      <th>IRCA</th>
-      <th>NIVEL_RIESGO</th>
+      <th>IRCA_CALIDAD_AGUA</th>
+      <th>NIVEL_RIESGO_CALIDAD_AGUA</th>
       <th>MUNICIPIO</th>
     </tr>
   </thead>
@@ -978,8 +980,8 @@ Para cada municipio se reporta:</p>
       <th>COD_DEPTO</th>
       <th>COD_MUNI</th>
       <th>DEPARTAMENTO</th>
-      <th>VALOR_ESTIMADO_CLUSTER</th>
-      <th>CLUSTER_RIESGO</th>
+      <th>VALOR_ESTIMADO_CLUSTER_RIESGO_VICTIMIZACION</th>
+      <th>CLUSTER_RIESGO_VICTIMIZACION</th>
       <th>PDET</th>
       <th>PDET_SITIO</th>
       <th>MUNICIPIO</th>
@@ -1050,11 +1052,11 @@ Para cada municipio se reporta:</p>
 <h3><strong>Data Encuesta Nacional de Calidad de vida</strong><a class="headerlink" href="#data-encuesta-nacional-de-calidad-de-vida" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_servicios_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1E7ErWrsPAR48RlI8BPctjpIhvbkpYkH2&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_salud_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1DkzguaTEm0NauAIdB3mXGomU5AF3r-pP&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_internet_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1ZeKQD4eWcXlf4-O41K51qRd4NWnF1BJ2&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_vivienda_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1P8zk8hkaRDld9LVunssQ40bn5KbfxcHi&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">df_hogar_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?export=download&amp;id=1B7YBNLnYc4mzwHHGGvzzlG63-4QY6kvc&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_servicios_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users\CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">servicios_hogar_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_salud_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">salud_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_internet_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">internet_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_vivienda_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">vivienda_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df_hogar_2023</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">CCOSTA397</span><span class="se">\\</span><span class="s2">OneDrive</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">CIDEACC</span><span class="se">\\</span><span class="s2">convocatoria38</span><span class="se">\\</span><span class="s2">raw_data</span><span class="se">\\</span><span class="s2">data_ecv</span><span class="se">\\</span><span class="s2">hogar_ecv_2023.CSV&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1254,6 +1256,116 @@ Tu DataFrame incluye datos de 147 de los 197 municipios de la región Caribe; Fa
   </tbody>
 </table>
 <p>5 rows × 27 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="data-centros-de-salud">
+<h3><strong>Data Centros de salud</strong><a class="headerlink" href="#data-centros-de-salud" title="Link to this heading">#</a></h3>
+<p>Relación de IPS públicas y privadas según el nivel de atención y capacidad instalada
+Fuente: Base de datos Registros Especial de Prestadores de Servicios de Salud - REPS
+Diligencia la Encuesta de Satisfacción:
+<a class="reference external" href="https://tramites.minsalud.gov.co/FormularioInscripcion/EncuestaSatisfaccion.aspx">https://tramites.minsalud.gov.co/FormularioInscripcion/EncuestaSatisfaccion.aspx</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_centros</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://drive.google.com/uc?export=download&amp;id=1Gv3hpJrg3vpypWlDpzNKfCO76LdMnbaD&#39;</span><span class="p">)</span>
+<span class="n">data_processed_centros_salud</span> <span class="o">=</span> <span class="n">data_centros_clean</span><span class="p">(</span><span class="n">data_centros</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analizar_columnas_faltantes</span><span class="p">(</span><span class="n">data_processed_centros_salud</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No hay datos faltantes.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_processed_centros_salud</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MUNICIPIO</th>
+      <th>COD_MUNI</th>
+      <th>REGISTROS_DE_CENTROS</th>
+      <th>MIXTA</th>
+      <th>PORCENTAJE_PRIVADA</th>
+      <th>PORCENTAJE_PUBLICA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ACHI</td>
+      <td>13006</td>
+      <td>20</td>
+      <td>0.0</td>
+      <td>5.00</td>
+      <td>95.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AGUACHICA</td>
+      <td>20011</td>
+      <td>171</td>
+      <td>0.0</td>
+      <td>71.93</td>
+      <td>28.07</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AGUSTIN CODAZZI</td>
+      <td>20013</td>
+      <td>68</td>
+      <td>0.0</td>
+      <td>75.00</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ALBANIA</td>
+      <td>44035</td>
+      <td>27</td>
+      <td>0.0</td>
+      <td>51.85</td>
+      <td>48.15</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ALGARROBO</td>
+      <td>47030</td>
+      <td>17</td>
+      <td>0.0</td>
+      <td>11.76</td>
+      <td>88.24</td>
+    </tr>
+  </tbody>
+</table>
 </div></div></div>
 </div>
 </section>
@@ -1595,6 +1707,7 @@ Debido al gran volumen de archivos, la data no está alojada en la nube y se tra
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-calidad-del-agua-para-consumo-humano-en-colombia"><strong>Data Calidad del Agua para Consumo Humano en Colombia</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-riesgo-de-victimizacion"><strong>Data Riesgo de victimización</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-encuesta-nacional-de-calidad-de-vida"><strong>Data Encuesta Nacional de Calidad de vida</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-centros-de-salud"><strong>Data Centros de salud</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-manzana"><strong>Nivel: Manzana</strong></a><ul class="nav section-nav flex-column">

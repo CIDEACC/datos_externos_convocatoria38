@@ -1,0 +1,1273 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Conjunto de datos final &#8212; Convocatoria 38.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'final_dataset';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Municipios Región Caribe" href="nombres_municipios_region_caribe.html" />
+    <link rel="prev" title="Diccionarios: Identificación de variables" href="diccionarios.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_cideacc.png" class="logo__image only-light" alt="Convocatoria 38. - Home"/>
+    <script>document.write(`<img src="_static/logo_cideacc.png" class="logo__image only-dark" alt="Convocatoria 38. - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Convocatoria 38
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reglas.html"><strong>Reglas de Trabajo</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="raw_to_processed.html"><strong>Raw to Processed</strong></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="manzanas.html"><strong>Georeferenciación manzanas</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="diccionarios.html"><strong>Diccionarios: Identificación de variables</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Conjunto de datos final</strong></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="nombres_municipios_region_caribe.html"><strong>Municipios Región Caribe</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CIDEACC/prueba_datos_convocatoria38" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CIDEACC/prueba_datos_convocatoria38/issues/new?title=Issue%20on%20page%20%2Ffinal_dataset.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/final_dataset.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conjunto de datos final</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Conjunto de datos final</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba"><strong>Prueba</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias"><strong>Referencias</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="conjunto-de-datos-final">
+<h1><strong>Conjunto de datos final</strong><a class="headerlink" href="#conjunto-de-datos-final" title="Link to this heading">#</a></h1>
+<section id="librerias-y-modulos-necesarios">
+<h2><strong>Librerías y modulos necesarios</strong><a class="headerlink" href="#librerias-y-modulos-necesarios" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones.faltantes</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_pib</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_ecv</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_calidad_agua</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_acceso_internet</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_centros_de_salud</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_casos_de_homicidio</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_censo.data_censo_dane</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_datas.data_riesgo_de_victimizacion</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">]</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data_processed_internet</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_processed_homicidios</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_processed_calidad_agua</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">key</span> <span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>  
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_processed_riesgo_de_victimizacion</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">key</span> <span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_final_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_processed_pib</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">,</span> <span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_final_final</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>DEPARTAMENTO</th>
+      <th>COD_MUNI</th>
+      <th>ACCESO_INTERNET</th>
+      <th>MUNICIPIO</th>
+      <th>CANTIDAD_HOMICIDIOS</th>
+      <th>IRCA_CALIDAD_AGUA</th>
+      <th>NIVEL_RIESGO_CALIDAD_AGUA</th>
+      <th>VALOR_ESTIMADO_CLUSTER_RIESGO_VICTIMIZACION</th>
+      <th>CLUSTER_RIESGO_VICTIMIZACION</th>
+      <th>PDET</th>
+      <th>PDET_SITIO</th>
+      <th>PIB</th>
+      <th>PARTICIPACION_PORCENTUAL_PIB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08001</td>
+      <td>307144.0</td>
+      <td>BARRANQUILLA</td>
+      <td>375</td>
+      <td>0.0</td>
+      <td>Sin riesgo</td>
+      <td>0.118209</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>70.862</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08078</td>
+      <td>5615.0</td>
+      <td>BARANOA</td>
+      <td>3</td>
+      <td>10.5</td>
+      <td>Riesgo bajo</td>
+      <td>0.087091</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>70.862</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08137</td>
+      <td>432.0</td>
+      <td>CAMPO DE LA CRUZ</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>Sin riesgo</td>
+      <td>0.083355</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>70.862</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08141</td>
+      <td>262.0</td>
+      <td>CANDELARIA</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>Sin riesgo</td>
+      <td>0.109280</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>70.862</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>08</td>
+      <td>ATLANTICO</td>
+      <td>08296</td>
+      <td>10155.0</td>
+      <td>GALAPA</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>Sin riesgo</td>
+      <td>0.116874</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>70.862</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>70</td>
+      <td>SUCRE</td>
+      <td>70742</td>
+      <td>1408.0</td>
+      <td>SAN LUIS DE SINCE</td>
+      <td>13</td>
+      <td>0.7</td>
+      <td>Sin riesgo</td>
+      <td>0.090525</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>12.705</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>70</td>
+      <td>SUCRE</td>
+      <td>70820</td>
+      <td>1611.0</td>
+      <td>SANTIAGO DE TOLU</td>
+      <td>21</td>
+      <td>26.5</td>
+      <td>Riesgo medio</td>
+      <td>0.158380</td>
+      <td>Medio Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>12.705</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>70</td>
+      <td>SUCRE</td>
+      <td>70823</td>
+      <td>615.0</td>
+      <td>TOLU VIEJO</td>
+      <td>0</td>
+      <td>31.8</td>
+      <td>Riesgo medio</td>
+      <td>0.165560</td>
+      <td>Medio Bajo</td>
+      <td>SI</td>
+      <td>Montes de María</td>
+      <td>12.705</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>70</td>
+      <td>SUCRE</td>
+      <td>70823</td>
+      <td>615.0</td>
+      <td>TOLU VIEJO</td>
+      <td>13</td>
+      <td>31.8</td>
+      <td>Riesgo medio</td>
+      <td>0.165560</td>
+      <td>Medio Bajo</td>
+      <td>SI</td>
+      <td>Montes de María</td>
+      <td>12.705</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>88</td>
+      <td>SAN ANDRES Y PROVIDENCIA</td>
+      <td>88001</td>
+      <td>11425.0</td>
+      <td>SAN ANDRES</td>
+      <td>41</td>
+      <td>1.8</td>
+      <td>Sin riesgo</td>
+      <td>0.102706</td>
+      <td>Bajo</td>
+      <td>NO</td>
+      <td>NO APLICA</td>
+      <td>2.286</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>
+<p>187 rows × 14 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_final_final</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;data_final_caribe.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_manzanas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data_processed/df_manzanas.csv&quot;</span><span class="p">)</span>
+<span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unicos_manzanas</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_MANZANA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">unicos_censo</span> <span class="o">=</span> <span class="n">data_processed_censo</span><span class="p">[</span><span class="s1">&#39;COD_MANZANA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faltantes_en_censo_df</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="p">[</span><span class="o">~</span><span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_MANZANA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data_processed_censo</span><span class="p">[</span><span class="s1">&#39;COD_MANZANA&#39;</span><span class="p">])]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CENSO NO, GEOREFERENCIACION SI: </span><span class="si">{</span><span class="n">faltantes_en_censo_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CENSO NO, GEOREFERENCIACION SI: 40036
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">faltantes_en_manzanas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="n">unicos_censo</span><span class="p">,</span> <span class="n">unicos_manzanas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CENSO SI, GEOREFERENCIACION NO: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">faltantes_en_manzanas</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CENSO SI, GEOREFERENCIACION NO: 7112
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged_manzanas</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_processed_censo</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_MUNI&#39;</span><span class="p">,</span> <span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_MANZANA&#39;</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">merged_manzanas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>COD_DEPTO</th>
+      <th>DEPARTAMENTO</th>
+      <th>COD_MUNI</th>
+      <th>MUNICIPIO</th>
+      <th>MPIO_CDPMP</th>
+      <th>CLAS_CCDGO</th>
+      <th>SETR_CCDGO</th>
+      <th>SETR_CCNCT</th>
+      <th>SECR_CCDGO</th>
+      <th>SECR_CCNCT</th>
+      <th>...</th>
+      <th>AGUA_COCINA</th>
+      <th>LUGAR_COCINA</th>
+      <th>TERR_ETNICA</th>
+      <th>TIPO_TERR_ETNICA</th>
+      <th>VIVIENDA_AREA_PROTEGIDA</th>
+      <th>COD_VIV_AREA_PROTEGIDA</th>
+      <th>RECONOCIMIENTO_ETNICO</th>
+      <th>COD_ETNIA</th>
+      <th>HABLA_LENGUA_NATIVA</th>
+      <th>ENTIENDE_LENGUA_NATIVA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13</td>
+      <td>BOLIVAR</td>
+      <td>13001</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>13001</td>
+      <td>2</td>
+      <td>4</td>
+      <td>130012004</td>
+      <td>10</td>
+      <td>13001200410</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>13</td>
+      <td>BOLIVAR</td>
+      <td>13001</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>13001</td>
+      <td>2</td>
+      <td>4</td>
+      <td>130012004</td>
+      <td>10</td>
+      <td>13001200410</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>13</td>
+      <td>BOLIVAR</td>
+      <td>13001</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>13001</td>
+      <td>2</td>
+      <td>4</td>
+      <td>130012004</td>
+      <td>10</td>
+      <td>13001200410</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13</td>
+      <td>BOLIVAR</td>
+      <td>13001</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>13001</td>
+      <td>2</td>
+      <td>4</td>
+      <td>130012004</td>
+      <td>10</td>
+      <td>13001200410</td>
+      <td>...</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>13</td>
+      <td>BOLIVAR</td>
+      <td>13001</td>
+      <td>CARTAGENA DE INDIAS</td>
+      <td>13001</td>
+      <td>2</td>
+      <td>4</td>
+      <td>130012004</td>
+      <td>10</td>
+      <td>13001200410</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1652634</th>
+      <td>23</td>
+      <td>CORDOBA</td>
+      <td>23570</td>
+      <td>PUEBLO NUEVO</td>
+      <td>23570</td>
+      <td>2</td>
+      <td>8</td>
+      <td>235702008</td>
+      <td>4</td>
+      <td>23570200804</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1652635</th>
+      <td>23</td>
+      <td>CORDOBA</td>
+      <td>23570</td>
+      <td>PUEBLO NUEVO</td>
+      <td>23570</td>
+      <td>2</td>
+      <td>8</td>
+      <td>235702008</td>
+      <td>4</td>
+      <td>23570200804</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1652636</th>
+      <td>23</td>
+      <td>CORDOBA</td>
+      <td>23570</td>
+      <td>PUEBLO NUEVO</td>
+      <td>23570</td>
+      <td>2</td>
+      <td>8</td>
+      <td>235702008</td>
+      <td>4</td>
+      <td>23570200804</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1652637</th>
+      <td>23</td>
+      <td>CORDOBA</td>
+      <td>23570</td>
+      <td>PUEBLO NUEVO</td>
+      <td>23570</td>
+      <td>2</td>
+      <td>8</td>
+      <td>235702008</td>
+      <td>4</td>
+      <td>23570200804</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1652638</th>
+      <td>23</td>
+      <td>CORDOBA</td>
+      <td>23570</td>
+      <td>PUEBLO NUEVO</td>
+      <td>23570</td>
+      <td>2</td>
+      <td>8</td>
+      <td>235702008</td>
+      <td>4</td>
+      <td>23570200804</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>1652639 rows × 53 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="prueba">
+<h2><strong>Prueba</strong><a class="headerlink" href="#prueba" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_manzanas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data_processed/df_manzanas.csv&quot;</span><span class="p">)</span>
+<span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;SETR_CCNCT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="p">[</span><span class="s1">&#39;SETR_CCNCT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">df_final_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;data_final_caribe.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df_final_final</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_final_final</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df_final_final</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_final_final</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_climate</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data_processed/data_climate.csv&quot;</span><span class="p">)</span>
+<span class="n">df_climate</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;CLAS_CCDGO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;CLAS_CCDGO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;SETR_CCNCT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;CLAS_CCDGO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">df_climate</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;CLAS_CCDGO&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_manzanas</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s1">&#39;SETR_CCNCT&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COD_MUNI&#39;</span><span class="p">,</span> <span class="s1">&#39;COD_DEPTO&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;DEPARTAMENTO&#39;</span><span class="p">,</span> <span class="s1">&#39;SETR_CCNCT&#39;</span><span class="p">]</span>
+<span class="n">centros_poblados_clima</span> <span class="o">=</span> <span class="n">df_manzanas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_climate</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">en_clima_pero_no_en_manzanas</span> <span class="o">=</span> <span class="n">df_climate</span><span class="p">[</span><span class="o">~</span><span class="n">df_climate</span><span class="p">[</span><span class="s1">&#39;SETR_CCNCT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">centros_poblados_clima</span><span class="p">[</span><span class="s1">&#39;SETR_CCNCT&#39;</span><span class="p">])]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Centros poblados en clima pero no en manzanas: </span><span class="si">{</span><span class="n">en_clima_pero_no_en_manzanas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Centros poblados en clima pero no en manzanas: 1578
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1><strong>Referencias</strong><a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+<div class="docutils container" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Datos Abiertos Colombia. Homicidio. 2025. Conjunto de datos abierto sobre homicidios en Colombia. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data">https://www.datos.gov.co/Seguridad-y-Defensa/HOMICIDIO/m8fd-ahd9/about_data</a>.</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Departamento Administrativo Nacional de Estadística (DANE). Censo Nacional de Población y Vivienda 2018. <a class="reference external" href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018">https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018</a>, 2018. Accessed: 2025-05-28.</p>
+</div>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Departamento Administrativo Nacional de Estadística (DANE). Cuentas nacionales departamentales: PIB por departamento. <a class="reference external" href="https://www.dane.gov.co/index.php/estadisticas-por-tema/cuentas-nacionales/cuentas-nacionales-departamentales">https://www.dane.gov.co/index.php/estadisticas-por-tema/cuentas-nacionales/cuentas-nacionales-departamentales</a>, 2025. Información actualizada el 28 de marzo de 2025. Consultado el 28 de mayo de 2025.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
+<p>Dirección de Censos y Demografía (DCD) and Departamento Administrativo Nacional de Estadística (DANE). Censo Nacional de Población y Vivienda – CNPV – 2018. <a class="reference external" href="https://microdatos.dane.gov.co/index.php/catalog/643">https://microdatos.dane.gov.co/index.php/catalog/643</a>, February 2023. Accessed: 2025-05-28.</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p>Gobierno de Colombia. Calidad del agua para consumo humano en colombia. Datos abiertos (datos.gov.co), 2025. Accedido el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data">https://www.datos.gov.co/Salud-y-Protecci-n-Social/Calidad-del-Agua-para-Consumo-Humano-en-Colombia/nxt2-39c3/about_data</a>.</p>
+</div>
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
+<p>Instituto Nacional de Salud de Colombia. Sivicap. 2025. Página oficial. URL: <a class="reference external" href="https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx">https://www.ins.gov.co/sivicap/Paginas/sivicap.aspx</a>.</p>
+</div>
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
+<p>Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Colombia tic. 2025. Página oficial. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://colombiatic.mintic.gov.co/679/w3-channel.html">https://colombiatic.mintic.gov.co/679/w3-channel.html</a>.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<p>Ministerio de Tecnologías de la Información y Comunicaciones de Colombia (MinTIC). Internet fijo penetración municipio. 2025. Dataset disponible en datos.gov.co. Consultado el 22 de mayo de 2025. URL: <a class="reference external" href="https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8">https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Internet-Fijo-Penetraci-n-Municipio/fut2-keu8</a>.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<p>Unidad para la Atención y Reparación Integral a las Víctimas. Índice de Riesgo de Victimización. Sitio web, 2025. Consultado el 24 de mayo de 2025. URL: <a class="reference external" href="https://datospaz.unidadvictimas.gov.co/indice-de-riesgo-de-victimizacion/">https://datospaz.unidadvictimas.gov.co/indice-de-riesgo-de-victimizacion/</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="diccionarios.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Diccionarios: Identificación de variables</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nombres_municipios_region_caribe.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Municipios Región Caribe</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Conjunto de datos final</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Librerías y modulos necesarios</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prueba"><strong>Prueba</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias"><strong>Referencias</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kanery Camargo - Nicoll Fontalvo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
